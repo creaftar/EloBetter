@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# Sitemaps Cruzadinhas
+Sitemap: https://creaftar.com/sitemap.xml
+Sitemap: https://creaftar.com/sitemap_ru.xml
+Sitemap: https://creaftar.com/sitemap_pt.xml
+Sitemap: https://creaftar.com/sitemap_it.xml
+Sitemap: https://creaftar.com/sitemap_id.xml
+Sitemap: https://creaftar.com/sitemap_hi.xml
+Sitemap: https://creaftar.com/sitemap_fr.xml
+Sitemap: https://creaftar.com/sitemap_es.xml
+Sitemap: https://creaftar.com/sitemap_de.xml
+
+# Sitemaps Wordsearch
+Sitemap: https://creaftar.com/sitemap_wordsearch.xml
+Sitemap: https://creaftar.com/sitemap_wordsearch_ru.xml
+Sitemap: https://creaftar.com/sitemap_wordsearch_pt.xml
+Sitemap: https://creaftar.com/sitemap_wordsearch_it.xml
+Sitemap: https://creaftar.com/sitemap_wordsearch_id.xml
+Sitemap: https://creaftar.com/sitemap_wordsearch_hi.xml
+Sitemap: https://creaftar.com/sitemap_wordsearch_fr.xml
+Sitemap: https://creaftar.com/sitemap_wordsearch_es.xml
+Sitemap: https://creaftar.com/sitemap_wordsearch_de.xml

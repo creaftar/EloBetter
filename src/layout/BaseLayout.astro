@@ -1,0 +1,38 @@
+---
+import "@/assets/styles/fontawesome/css/all.min.css";
+import "@/assets/styles/layout/BaseLayout.css";
+import "@/assets/styles/global.css";
+
+import Nav from "@/components/Nav.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  keywords: string;
+  lang: string;
+}
+
+const { 
+  title = "EloBetter - Aprenda a Subir de Elo no League of Legends", 
+  description = "Cansado de trolls, afk's e smurfs? Aprenda a subir de elo de verdade com este guia extremamente compacto, sem enrolações.", 
+  keywords = "elo, league of legends, gold lol, como subir de elo no lol, como subir de elo, como sair do prata, como sair do ouro, como sair do ferro, como sair do bronze, como sair do platina, como sair do diamante, como sair do mestre, como sair do grão mestre, como pegar top 1",
+  lang = "pt-br"
+} = Astro.props as Props;
+
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+        <link rel="icon" type="image/svg+xml" href="/assets/imgs/icon.svg" />
+        <meta name="description" content={description} />
+    </head>
+    <body>
+        <Nav />
+        <slot></slot>
+    </body>
+</html>

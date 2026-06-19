@@ -1,0 +1,6 @@
+.elemento-invisivel{
+    visibility: hidden;
+}
+.elemento-visivel{
+    visibility: visible;
+}

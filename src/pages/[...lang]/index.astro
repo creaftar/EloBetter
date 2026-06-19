@@ -1,0 +1,50 @@
+---
+import BaseLayout from "@/layout/BaseLayout.astro";
+import MyAccount from "@/components/index/MyAccount.astro";
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang: undefined } }, // Rota padrão (ex: home sem subpasta)
+    
+    // Variações principais dos servidores da imagem
+    { params: { lang: 'en-us' } }, // América do Norte (NA)
+    { params: { lang: 'en-gb' } }, // Europa Ocidental - Inglês (EUW)
+    { params: { lang: 'en-au' } }, // Oceania (OCE)
+    { params: { lang: 'pt-br' } }, // Brasil (BR)
+    { params: { lang: 'es-mx' } }, // América Latina (LAN / LAS)
+    { params: { lang: 'es-es' } }, // Europa Ocidental - Espanhol (EUW)
+    { params: { lang: 'ko-kr' } }, // Coreia do Sul (KR)
+    { params: { lang: 'ja-jp' } }, // Japão (JP)
+    { params: { lang: 'tr-tr' } }, // Turquia (TR)
+    { params: { lang: 'vi-vn' } }, // Vietnã (VN)
+    { params: { lang: 'de-de' } }, // Alemanha / Alemão
+    { params: { lang: 'fr-fr' } }, // França / Francês
+    { params: { lang: 'it-it' } }, // Itália / Italiano
+    { params: { lang: 'pl-pl' } }, // Polônia / Polonês
+    { params: { lang: 'el-gr' } }, // Grécia / Grego
+    { params: { lang: 'ro-ro' } }, // Romênia / Romeno
+    { params: { lang: 'hu-hu' } }, // Hungria / Húngaro
+    { params: { lang: 'cs-cz' } }, // República Checa / Checo
+    { params: { lang: 'ru-ru' } }, // Rússia / Russo
+    { params: { lang: 'en-sg' } }, // Singapura - Inglês (SG)
+    { params: { lang: 'en-ph' } }, // Filipinas - Inglês (PH)
+    { params: { lang: 'th-th' } }, // Tailândia / Tailandês
+    { params: { lang: 'zh-tw' } }, // Taiwan / Chinês Tradicional
+    { params: { lang: 'ar-ae' } }, // Emirados Árabes Unidos / Árabe
+  ];
+}
+
+const lang = Astro.currentLocale || 'pt-br'; 
+console.log(lang);
+---
+
+<BaseLayout
+title = "EloBetter - Aprenda a Subir de Elo no League of Legends"
+description = "Cansado de trolls, afk's e smurfs? Aprenda a subir de elo de verdade com este guia extremamente compacto, sem enrolações."
+keywords = "elo, league of legends, gold lol, como subir de elo no lol, como subir de elo, como sair do prata, como sair do ouro, como sair do ferro, como sair do bronze, como sair do platina, como sair do diamante, como sair do mestre, como sair do grão mestre, como pegar top 1"
+lang={lang}
+>
+  <!-- <Banner /> Banner inicial animado -->
+  <MyAccount />
+  <!--<EloTips /> Dicas para cada elo --> 
+</BaseLayout>
