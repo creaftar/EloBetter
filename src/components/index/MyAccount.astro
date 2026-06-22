@@ -1,0 +1,28 @@
+---
+import "@/assets/styles/pages/index/myaccount.css";
+
+const resVersion = await fetch("https://ddragon.leagueoflegends.com/api/versions.json");
+const versions = await resVersion.json();
+const latestVersion = versions[0]; // pega a versão mais recente
+
+const res = await fetch("https://crivras.vercel.app/api/riot?nome=jiyuu%20wo&tag=BR1");
+const perfil = await res.json();
+---
+
+<div>
+    <p id="nickname">{perfil.nome} <span id="tag-br1">#{perfil.tag}</span></p>
+    <button>COPIAR</button>
+</div>
+    <p>{perfil.nivel}</p>
+<div>
+  <img 
+  src={`https://ddragon.leagueoflegends.com/cdn/${latestVersion}/img/profileicon/${perfil.iconeId}.png`} 
+  alt="Ícone do Invocador" 
+  width="128" 
+  height="128" 
+  loading="lazy" 
+/>
+</div>
+<p>{Array.isArray(perfil.ranking) ? perfil.ranking[0].tier : perfil.ranking}</p>
+
+<hr>

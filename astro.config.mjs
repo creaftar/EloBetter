@@ -42,8 +42,35 @@ export default defineConfig({
   },
   integrations: [
     sitemap({
-      //filter: (page) => !page.includes('/private'), // exemplo: excluir rotas
-      i18n: true, // gera sitemap com base nas rotas multilíngues
-    }),
+      i18n: {
+        defaultLocale: "en-us",
+        locales: {
+          "en-us": "en",
+          "en-gb": "en",
+          "en-au": "en",
+          "en-sg": "en",
+          "en-ph": "en",
+          "pt-br": "pt",
+          "es-mx": "es",
+          "es-es": "es",
+          "ko-kr": "ko",
+          "ja-jp": "ja",
+          "tr-tr": "tr",
+          "vi-vn": "vi",
+          "de-de": "de",
+          "fr-fr": "fr",
+          "it-it": "it",
+          "pl-pl": "pl",
+          "el-gr": "el",
+          "ro-ro": "ro",
+          "hu-hu": "hu",
+          "cs-cz": "cs",
+          "ru-ru": "ru",
+          "th-th": "th",
+          "zh-tw": "zh",
+          "ar-ae": "ar"
+        }
+      }
+    })
   ],
 });

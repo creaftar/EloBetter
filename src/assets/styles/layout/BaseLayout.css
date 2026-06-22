@@ -14,3 +14,9 @@ body{
 	background-color: var(--fundo-body);
 	overflow-y:hidden;
 }
+
+#content-bl-body{
+	margin-top: 62px;
+	width: 100%;
+	height: 100%;
+}
