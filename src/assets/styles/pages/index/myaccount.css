@@ -1,6 +1,35 @@
+#container-perfil-infos{
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    align-items: center;
+    padding: 12px;
+    width: 100%;
+}
 #nickname{
     font-weight: bold;
+    font-size: 2em;
 }
 #tag-br1{
-    font-weight: normal;
+    font-size: medium;
+}
+#container-img-nivel{
+    position: relative;
+}
+#perfil-img{
+    border-radius: 9px;
+    z-index: 1;
+}
+#perfil-nivel{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(25%);
+    z-index: 2;
+    background-color: rgba(15, 15, 15, 0.7);
+    color: white;
+    font-weight: bold;
+    padding: 3px 9px;
+    border-radius: 12px;
+    text-align: center;
 }

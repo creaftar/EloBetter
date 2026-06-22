@@ -9,20 +9,23 @@ const res = await fetch("https://crivras.vercel.app/api/riot?nome=jiyuu%20wo&tag
 const perfil = await res.json();
 ---
 
-<div>
-    <p id="nickname">{perfil.nome} <span id="tag-br1">#{perfil.tag}</span></p>
-    <button>COPIAR</button>
+<div id="container-perfil-infos">
+    <div id="container-img-nivel">
+        <img
+        id="perfil-img" 
+        src={`https://ddragon.leagueoflegends.com/cdn/${latestVersion}/img/profileicon/${perfil.iconeId}.png`} 
+        alt="Ícone do Invocador" 
+        width="120" 
+        height="120" 
+        loading="lazy" 
+        />
+        <p id="perfil-nivel">{perfil.nivel}</p>
+    </div>
+    <div>
+        <p id="nickname">{perfil.nome} <span id="tag-br1">#{perfil.tag}</span></p>
+        <button>COPIAR</button><button>ATUALIZAR</button>
+        <p>{perfil.ranking[0].tier}</p>
+        <p>Última atualização: 56 minutos atrás</p>
+    </div>
 </div>
-    <p>{perfil.nivel}</p>
-<div>
-  <img 
-  src={`https://ddragon.leagueoflegends.com/cdn/${latestVersion}/img/profileicon/${perfil.iconeId}.png`} 
-  alt="Ícone do Invocador" 
-  width="128" 
-  height="128" 
-  loading="lazy" 
-/>
-</div>
-<p>{Array.isArray(perfil.ranking) ? perfil.ranking[0].tier : perfil.ranking}</p>
-
 <hr>
