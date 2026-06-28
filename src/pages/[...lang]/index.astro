@@ -7,8 +7,6 @@ import "@/assets/styles/pages/index/index.css";
 export async function getStaticPaths() {
   return [
     { params: { lang: undefined } }, // Rota padrão (ex: home sem subpasta)
-    
-    // Variações principais dos servidores da imagem
     { params: { lang: 'en-us' } }, // América do Norte (NA)
     { params: { lang: 'en-gb' } }, // Europa Ocidental - Inglês (EUW)
     { params: { lang: 'en-au' } }, // Oceania (OCE)
@@ -47,26 +45,12 @@ lang={lang}
 >
   <Banner /> <!-- Banner inicial animado -->
   <MyAccount />
-  <hr>
   <!--
   <MonoChampion />
   <Mentalidade />
   <Vicios />
   <EloTips /> Dicas e principais erros para cada elo
   --> 
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean fringilla nunc dui, eu eleifend purus pretium a. Vivamus viverra ex in tortor tincidunt, vel tincidunt mi finibus. Integer blandit metus a ante scelerisque, et suscipit massa porttitor. Nunc ligula ante, egestas eu magna sed, molestie tincidunt massa. Aenean ultricies velit a feugiat venenatis. Nunc at risus vitae elit pulvinar sollicitudin ut facilisis turpis. Mauris tempor nisi sagittis convallis lobortis. Mauris vel dolor at lorem dictum vehicula. Maecenas ornare velit at est suscipit, in dictum ligula tincidunt. Ut et leo eu enim venenatis finibus eu nec nibh. Donec venenatis pharetra ligula vel faucibus.</p>
-  <br></br>
-  <p>Aliquam ut magna at erat tincidunt mattis. Nunc porta dolor odio, a egestas elit tincidunt vitae. Aliquam molestie eros sit amet odio tempor fermentum. Nulla quis ullamcorper urna. Suspendisse purus nisl, ullamcorper sed tellus vitae, porta luctus orci. In hac habitasse platea dictumst. Curabitur in feugiat ante. Morbi tempus urna scelerisque dolor mollis, vel ornare neque vulputate. Vestibulum nec risus vel metus congue sodales eu non urna.</p>
-  <br></br>
-  <p>Sed rhoncus, nunc in viverra convallis, nisl justo ornare sem, sit amet varius metus justo vel dui. Nam volutpat urna diam, id condimentum erat pretium id. Donec laoreet ex et diam varius, eget sagittis lectus vestibulum. Suspendisse ac posuere tellus. Nunc a arcu lacus. Suspendisse pharetra eget dui ut dapibus. Praesent ut mi vitae eros commodo aliquet. Etiam ullamcorper sollicitudin tincidunt. Curabitur iaculis odio eget finibus elementum. Etiam dignissim iaculis suscipit. Pellentesque magna ligula, vehicula at odio quis, luctus facilisis lacus. Donec id dapibus dui, id aliquet enim. Etiam vulputate convallis consectetur.</p>
-  <br></br>
-  <p>Quisque hendrerit pharetra sodales. Fusce eu auctor ex, ac congue leo. Aenean feugiat ac turpis nec tincidunt. Sed commodo a ligula non venenatis. Suspendisse imperdiet egestas euismod. Duis dolor nisl, porttitor sit amet mollis in, congue sit amet dolor. Duis vulputate lacus mauris, a accumsan elit ullamcorper id. Quisque justo urna, convallis sit amet tincidunt elementum, viverra eu ex. Duis in gravida ligula. Donec mollis vulputate lectus sed pulvinar. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur in risus nisl.</p>
-  <br></br>
-  <p>Aliquam scelerisque vel augue vel maximus. Vivamus consectetur, orci eget auctor pharetra, urna nulla convallis magna, vitae iaculis quam leo congue leo. Phasellus nec felis id ligula finibus mattis. Donec non suscipit mauris. Aenean nec nisi a mauris bibendum elementum. Suspendisse laoreet, massa sed maximus iaculis, leo elit bibendum erat, ut pharetra justo lectus venenatis neque. Nullam pretium nunc ut eros mattis sodales. Nullam maximus mauris ac nisl euismod tempor ut id sapien. Aenean in volutpat nibh.</p>
-  <br></br>
-  <p>Sed rhoncus, nunc in viverra convallis, nisl justo ornare sem, sit amet varius metus justo vel dui. Nam volutpat urna diam, id condimentum erat pretium id. Donec laoreet ex et diam varius, eget sagittis lectus vestibulum. Suspendisse ac posuere tellus. Nunc a arcu lacus. Suspendisse pharetra eget dui ut dapibus. Praesent ut mi vitae eros commodo aliquet. Etiam ullamcorper sollicitudin tincidunt. Curabitur iaculis odio eget finibus elementum. Etiam dignissim iaculis suscipit. Pellentesque magna ligula, vehicula at odio quis, luctus facilisis lacus. Donec id dapibus dui, id aliquet enim. Etiam vulputate convallis consectetur.</p>
-  <br></br>
-  <p>Quisque hendrerit pharetra sodales. Fusce eu auctor ex, ac congue leo. Aenean feugiat ac turpis nec tincidunt. Sed commodo a ligula non venenatis. Suspendisse imperdiet egestas euismod. Duis dolor nisl, porttitor sit amet mollis in, congue sit amet dolor. Duis vulputate lacus mauris, a accumsan elit ullamcorper id. Quisque justo urna, convallis sit amet tincidunt elementum, viverra eu ex. Duis in gravida ligula. Donec mollis vulputate lectus sed pulvinar. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur in risus nisl.</p>
-  <br></br>
-  <p>Generated 5 paragraphs, 424 words, 2845 bytes of Lorem Ipsum</p>
+  
+  <footer>© 2026 - 2026 | EloBetter - Todos os direitos reservados.</footer>
 </BaseLayout>

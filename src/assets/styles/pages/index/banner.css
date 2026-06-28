@@ -1,0 +1,132 @@
+.container-banner{
+    height: 500px;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.container-titulo-banner{
+    background-color: transparent;
+    fill: white;
+    opacity: 1;
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+#logo-svg-banner{
+    filter: drop-shadow(3px 5px 4px rgba(0, 0, 0, 0.6));
+}
+h1{
+    font-size: 1.2em;
+    padding: 36px;
+    font-weight: bold;
+    text-wrap: balance;
+}
+
+
+.container-abs-footer-banner{
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    gap: 32px;
+    overflow: auto;
+    width: 100%;
+}
+.container-footer-banner{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    gap: 32px;
+}
+
+.container-footer-banner a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-cropped {
+    opacity: 0.6;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+    /* Suavização profissional (Smooth Gradient Easing) */
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        black 0%,
+        black 30%,
+        rgba(0, 0, 0, 0.95) 45%,
+        rgba(0, 0, 0, 0.85) 58%,
+        rgba(0, 0, 0, 0.65) 70%,
+        rgba(0, 0, 0, 0.40) 81%,
+        rgba(0, 0, 0, 0.15) 91%,
+        transparent 100%
+    );
+    mask-image: linear-gradient(
+        to bottom,
+        black 0%,
+        black 30%,
+        rgba(0, 0, 0, 0.95) 45%,
+        rgba(0, 0, 0, 0.85) 58%,
+        rgba(0, 0, 0, 0.65) 70%,
+        rgba(0, 0, 0, 0.40) 81%,
+        rgba(0, 0, 0, 0.15) 91%,
+        transparent 100%
+    );
+}
+@media screen and (max-width: 350px){
+    .container-footer-banner{
+        justify-content: space-around;
+        gap: 12px;
+    }
+}
+
+@media screen and (max-width: 1024px){
+    h1{
+        font-size: 16px;
+        line-height: 24px;
+        text-wrap: balance;
+        width: 100%;
+    }
+    .container-titulo-banner{
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 2561px){
+    .video-cropped {
+    opacity: 0.6;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+    /* Máscara apenas para Baixo, Direita e Esquerda (Topo fica intacto) */
+    -webkit-mask-image: 
+        linear-gradient(to bottom, black 70%, transparent 100%),
+        linear-gradient(to right, black 70%, transparent 100%),
+        linear-gradient(to left, black 70%, transparent 100%);
+        
+        mask-image: 
+            linear-gradient(to bottom, black 70%, transparent 100%),
+            linear-gradient(to right, black 70%, transparent 100%),
+            linear-gradient(to left, black 70%, transparent 100%);
+
+        -webkit-mask-composite: source-in;
+        mask-composite: intersect;
+    }
+}
