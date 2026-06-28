@@ -4,3 +4,8 @@
 .elemento-visivel{
     visibility: visible;
 }
+.linha{
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+}

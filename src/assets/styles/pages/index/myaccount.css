@@ -5,16 +5,17 @@
     align-items: center;
     padding: 12px;
     width: 100%;
-}
-#nickname{
-    font-weight: bold;
-    font-size: 2em;
-}
-#tag-br1{
-    font-size: medium;
+    justify-content: center;
 }
 #container-img-nivel{
     position: relative;
+}
+#container-img-perfil:empty{
+    border-radius: 9px;
+    width: 120px;
+    height: 120px;
+    background-color: rgba(50, 50, 50, 1);
+    animation: pulse 1.5s infinite ease-in-out;
 }
 #perfil-img{
     border-radius: 9px;
@@ -26,10 +27,142 @@
     left: 50%;
     transform: translateX(-50%) translateY(25%);
     z-index: 2;
-    background-color: rgba(15, 15, 15, 0.7);
+    background-color: rgba(50, 50, 50, 1);
     color: white;
     font-weight: bold;
     padding: 3px 9px;
     border-radius: 12px;
     text-align: center;
+}
+.perfil-infos{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+}
+.container-nickname{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 6px;
+}
+#nickname{
+    font-weight: bold;
+    font-size: 2em;
+}
+#tag-br1{
+    font-size: medium;
+}
+.container-perfil-button{
+    display: flex;
+    flex-direction: row;
+    gap: 9px;
+}
+.perfil-button{
+    background-color: rgba(50, 50, 50, 1);
+    color: wheat;
+    font-weight: bold;
+    padding: 6px 9px;
+    border-radius: 6px;
+    border: solid 1px rgba(15, 15, 15, 1);
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.container-elo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+}
+
+#tier-perfil-name{
+    font-weight: bold;
+}
+
+.winrate-perfil{
+    font-size: small;
+}
+#tier-perfil-lp{
+    font-size: small;
+    font-weight: bold;
+    align-self: flex-end;
+    color: rgba(200, 200, 200, 0.7);
+}
+
+#atualizacao-perfil{
+    font-size: smaller;
+    color: rgba(200, 200, 200, 0.7);
+    margin-top: 9px;
+    align-self: flex-end;
+    font-style: italic;
+}
+
+/* Estilo base do esqueleto */
+.skeleton-text:empty {
+    display: inline-block;
+    background-color: rgba(50, 50, 50, 1);
+    border-radius: 4px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+.disabled, .copiado{
+    opacity: 0.6;
+    transition: opacity 0.2s;
+}
+
+.enabled, .nao-copiado{
+    opacity: 1;
+    transition: opacity 0.2s;
+}
+
+#nickname:empty {
+    width: 120px;
+    height: 30px;
+}
+
+#tag-br1:empty {
+    width: 45px;
+    height: 22px;
+}
+
+#atualizacao-perfil:empty {
+    width: 180px;
+    height: 14px;
+}
+
+/* Animação de pulsação suave */
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 0.3; }
+    100% { opacity: 0.6; }
+}
+
+.fa-copy:before {
+    content: "\f0c5"
+}
+
+.fa-arrows-rotate:before,
+.fa-refresh:before,
+.fa-sync:before {
+    content: "\f021"
+}
+
+@media (max-width: 500px){
+    #perfil-img{
+        width: 82px;
+        height: 82px;
+    }
+    #nickname{
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+    #tag-br1{
+        font-size: small;
+    }
+    #elo-perfil{
+        width: 64px;
+        height: 64px;
+    }
 }

@@ -1,31 +1,35 @@
 ---
 import "@/assets/styles/pages/index/myaccount.css";
-
-const resVersion = await fetch("https://ddragon.leagueoflegends.com/api/versions.json");
-const versions = await resVersion.json();
-const latestVersion = versions[0]; // pega a versão mais recente
-
-const res = await fetch("https://crivras.vercel.app/api/riot?nome=jiyuu%20wo&tag=BR1");
-const perfil = await res.json();
 ---
-
 <div id="container-perfil-infos">
     <div id="container-img-nivel">
-        <img
-        id="perfil-img" 
-        src={`https://ddragon.leagueoflegends.com/cdn/${latestVersion}/img/profileicon/${perfil.iconeId}.png`} 
-        alt="Ícone do Invocador" 
-        width="120" 
-        height="120" 
-        loading="lazy" 
-        />
-        <p id="perfil-nivel">{perfil.nivel}</p>
+        <div id="container-img-perfil"></div>
+        <p id="perfil-nivel">...</p>
     </div>
-    <div>
-        <p id="nickname">{perfil.nome} <span id="tag-br1">#{perfil.tag}</span></p>
-        <button>COPIAR</button><button>ATUALIZAR</button>
-        <p>{perfil.ranking[0].tier}</p>
-        <p>Última atualização: 56 minutos atrás</p>
+    <div class="perfil-infos">
+        <div class="container-nickname">
+            <p id="nickname" class="skeleton-text"></p><span id="tag-br1" class="skeleton-text"></span>
+            <div class="container-perfil-button">
+                <button id="copiar-perfil" class="perfil-button"><i class="fa-regular fa-copy"></i></button>
+                <button id="atualizar-perfil" class="perfil-button disabled" disabled><i class="fa-solid fa-arrows-rotate"></i></button>
+            </div>
+        </div>
+        <div class="container-elo">
+            <img 
+            id="elo-perfil" 
+            width="80px"
+            height="80px"
+            />
+            <div>
+                <div class="linha"><p id="tier-perfil-name"></p><p id="tier-perfil-division"></p><p id="tier-perfil-lp"></p></div>
+                <p class="winrate-perfil"><span id="tier-perfil-win">50</span>W / <span id="tier-perfil-losses">30</span>L</p>
+                <p class="winrate-perfil" id="tier-perfil-winrate">60% Winrate</p>
+            </div>
+        </div>
+        <p id="atualizacao-perfil"></p>
     </div>
 </div>
-<hr>
+
+<script>
+    import '@/assets/scripts/index/account/interface.js';
+</script>
