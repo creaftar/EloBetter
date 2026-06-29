@@ -14,6 +14,10 @@
 }
 #container-img-nivel{
     position: relative;
+    height: 100%;
+}
+#container-img-perfil{
+    display: flex;
 }
 #container-img-perfil:empty{
     border-radius: 9px;
@@ -27,15 +31,16 @@
     z-index: 1;
 }
 #perfil-nivel{
+    font-size: small;
     position: absolute;
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%) translateY(-50%);
+    transform: translate(-50%, 50%);
     z-index: 2;
     background-color: rgba(50, 50, 50, 1);
     color: white;
     font-weight: bold;
-    padding: 3px 9px;
+    padding: 1px 9px;
     border-radius: 12px;
     text-align: center;
 }
@@ -48,19 +53,23 @@
 .container-nickname{
     display: flex;
     flex-direction: row;
-    align-items: flex-end;
     gap: 6px;
 }
 #nickname{
     font-weight: bold;
     font-size: 2em;
+    text-wrap: nowrap;
 }
 #tag-br1{
-    font-size: medium;
+    font-size: small;
+    margin-right: 9px;
+    color: wheat;
 }
 .container-perfil-button{
     display: flex;
     flex-direction: row;
+    align-self: center;
+    height: 100%;
     gap: 9px;
 }
 .perfil-button{
@@ -94,6 +103,7 @@
     font-weight: bold;
     align-self: flex-end;
     color: rgba(200, 200, 200, 0.7);
+    text-wrap: nowrap;
 }
 
 #atualizacao-perfil{

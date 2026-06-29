@@ -33,8 +33,6 @@ async function AtualizarInterface(){
         await AtualizarPerfil();
         perfil = await BuscarPerfil();
     }
-    
-    console.log(perfil);
 
     imgEl.innerHTML = "";
     imgEl.appendChild(GerarImg());

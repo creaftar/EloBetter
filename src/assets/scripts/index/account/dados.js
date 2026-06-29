@@ -42,9 +42,7 @@ async function SalvarPerfil(perfil){
             ranking: perfil.ranking,
             ultimaAtualizacao: new Date().toISOString()
         }, { merge: true });
-        
-        console.log("Perfil salvo com sucesso no Firestore!");
     } catch (error) {
-        console.error("Erro ao salvar perfil no Firestore:", error);
+        console.error(error);
     }
 }

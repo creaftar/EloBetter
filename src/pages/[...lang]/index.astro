@@ -2,6 +2,7 @@
 import BaseLayout from "@/layout/BaseLayout.astro";
 import MyAccount from "@/components/index/MyAccount.astro";
 import Banner from "@/components/index/Banner.astro";
+import MonoChampion from "@/components/index/curso/MonoChampion.astro";
 import "@/assets/styles/pages/index/index.css";
 
 export async function getStaticPaths() {
@@ -43,13 +44,14 @@ description = "Cansado de trolls, afk's e smurfs? Aprenda a subir de elo de verd
 keywords = "elo, league of legends, gold lol, como subir de elo no lol, como subir de elo, como sair do prata, como sair do ouro, como sair do ferro, como sair do bronze, como sair do platina, como sair do diamante, como sair do mestre, como sair do grão mestre, como pegar top 1"
 lang={lang}
 >
-  <Banner /> <!-- Banner inicial animado -->
+  <Banner />
   <MyAccount />
-  <!--
   <MonoChampion />
+  <!--
   <Mentalidade />
   <Vicios />
   <EloTips /> Dicas e principais erros para cada elo
+  <Conclusao />
   --> 
   
   <footer>© 2026 - 2026 | EloBetter - Todos os direitos reservados.</footer>

@@ -30,10 +30,12 @@
     transition: background-color 0.1s, opacity 0.1s;
 }
 #menu-idiomas > li > a{
+    color: rgba(15, 15, 15, 1);
     padding: 9px;
     display: flex;
     height: 100%;
     width: 100%;
+    position: relative;
 }
 #menu-idiomas li:hover{
     opacity: 1;
@@ -45,7 +47,7 @@
 }
 
 .idioma-ativo{
-	color: #c28f2c;
+	color: #c28f2c !important;
     position: relative;
     display: flex;
     width: 100%;
@@ -60,8 +62,8 @@
   font-weight: 900;
   position: absolute;
   right: 32px;
-  top: 0;
-  transform: translateY(50%);
+  top: 50%;
+  transform: translateY(-50%);
   opacity: 1;
 }
 

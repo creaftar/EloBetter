@@ -1,0 +1,86 @@
+.container-monochampion{
+    /*background-image: url('');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left bottom;*/
+    background-image: url('/assets/imgs/background/onda.svg');
+    background-repeat: repeat-x;
+    background-position: top center;
+    background-size: auto 12px;
+    animation: moverOnda 150s linear infinite;
+    height: 450px;
+    width: 100%;
+    background-color: rgba(30, 33, 39, 1);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    /*-webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0, 0, 0, 0.3) 4%,
+        rgba(0, 0, 0, 0.7) 10%,
+        rgba(0, 0, 0, 0.9) 15%,
+        black 20%,
+        black 100%
+    );
+    mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0, 0, 0, 0.3) 4%,
+        rgba(0, 0, 0, 0.7) 10%,
+        rgba(0, 0, 0, 0.9) 15%,
+        black 20%,
+        black 100%
+    );*/
+    position: relative;
+}
+.container-conteudo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    z-index: 1;
+}
+#truedamage-bg{
+    height: 100%;
+    max-width: 100%;
+}
+
+.destaque{
+    color: wheat;
+}
+.li-monochampion{
+    padding: 6px;
+}
+@media screen and (max-width: 1024px){
+    .container-monochampion{
+        flex-direction: column;
+        height: fit-content;
+        animation: moverOnda 30s linear infinite;
+    }
+    .container-conteudo{
+        justify-content: flex-start;
+        padding: 24px;
+        flex-direction: column;
+    }
+    
+    #truedamage-bg{
+        order: 1;
+        height: unset;
+        max-width: 100%;
+        bottom: 0;
+        z-index: 0;
+    }
+}
+@keyframes moverOnda {
+    from {
+        background-position: 0 top;
+    }
+    to {
+        /* Move o fundo horizontalmente. 
+           O ideal é usar a largura exata da sua imagem ou 100% para um loop perfeito */
+        background-position: 100% top; 
+    }
+}
