@@ -33,3 +33,7 @@ body{
     flex-direction: row;
     gap: 6px;
 }
+
+h3{
+    font-size: x-large;
+}

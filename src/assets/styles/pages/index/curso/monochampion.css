@@ -53,7 +53,24 @@
 }
 .li-monochampion{
     padding: 6px;
+    transform: translateX(-50px);
+    opacity: 0;
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
+.li-monochampion.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+.container-buttons-monochampions{
+    display: flex;
+    gap: 9px;
+    height: 30%;
+    align-items: center;
+}
+.next-step{
+    height: fit-content;
+}
+
 @media screen and (max-width: 1024px){
     .container-monochampion{
         flex-direction: column;
@@ -83,4 +100,11 @@
            O ideal é usar a largura exata da sua imagem ou 100% para um loop perfeito */
         background-position: 100% top; 
     }
+}
+
+.fa-rotate-back:before,
+.fa-rotate-backward:before,
+.fa-rotate-left:before,
+.fa-undo-alt:before {
+    content: "\f2ea"
 }
