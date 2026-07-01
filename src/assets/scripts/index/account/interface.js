@@ -25,11 +25,11 @@ atualizarBtn.addEventListener("click", async () => {
     await AtualizarPerfil();
     VerificarEstadoBotao(); 
     AtualizarTextoTempo();
-    AtualizarInterface();
+    AtualizarInterface(true);
 });
 
-async function AtualizarInterface(){
-    if (!perfil){
+async function AtualizarInterface(botaoChamando = false){
+    if (!perfil || botaoChamando){
         await AtualizarPerfil();
         perfil = await BuscarPerfil();
     }

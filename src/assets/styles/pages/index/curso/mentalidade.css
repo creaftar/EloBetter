@@ -1,0 +1,94 @@
+.container-mentalidade{
+    display: flex;
+    flex-direction: column;
+}
+#mentalidade{
+    padding: 12px;
+    align-self: center;
+    border-bottom: dashed 5px wheat;
+}
+.container-destaque{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 36px;
+}
+.container-cards-mentalidade{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 90%;
+    border: dashed 3px rgba(20, 20, 20);
+    padding: 9px;
+    max-width: 1920px;
+    align-self: center;
+}
+.card-mentalidade{
+    background-color: rgb(30, 33, 39);
+    width: 240px;
+    height: 200px;
+    border: solid 3px rgba(20, 20, 20);
+    border-bottom: solid 12px rgba(20, 20, 20);
+    border-radius: 12px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.6;
+    cursor:default;
+}
+
+#card-principal-mentalidade {
+    opacity: 1;
+    position: relative;
+}
+
+#card-principal-mentalidade::after {
+    content: "";
+    position: absolute;
+    bottom: -33px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 30px solid rgba(20, 20, 20);
+}
+.card-mentalidade.mentalidade-ativa{
+    cursor: pointer;
+}
+
+.card-mentalidade.mentalidade-ativa:hover{
+    border-bottom: solid 9px rgba(20, 20, 20);
+}
+.display-none{
+    display: none;
+}
+
+.container-img-mentalidade{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    gap: 6px;
+    align-items: center;
+}
+
+#aviso-mentalidade{
+    background-color: rgb(30, 33, 39);
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+    max-width: 1920px;
+    width: 90%;
+    margin: 9px;
+}
+#aviso-img-mentalidade{
+    font-size: 0.9em;
+    font-style: italic;
+}
+#img-mentalidade{
+    border: solid 1px rgba(245, 222, 179, 0.3);
+}

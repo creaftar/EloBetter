@@ -26,7 +26,7 @@ nextBtn.addEventListener("click", () => {
         localStorage.setItem("monoIndex", currentActiveIndex);
     }
     else {
-        const proximaSecao = document.getElementById("footer-teste");
+        const proximaSecao = document.getElementById("mentalidade");
         if (proximaSecao) {
             proximaSecao.scrollIntoView({ behavior: 'smooth' });
         }
