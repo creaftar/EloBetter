@@ -9,17 +9,30 @@ import chatConfig from "@/assets/imgs/prints/chat_config.png";
 <div class="container-mentalidade">
     <h3 class="destaque" id="mentalidade">A Mentalidade Correta</h3>
     <div class="container-destaque">
-        <h4 id="card-principal-mentalidade" class="card-mentalidade mentalidade-ativa">O que é a Desestabilização Emocional (tiltar)</h4>
+        <h4 id="card-principal-mentalidade" class="quadrado-mentalidade mentalidade-ativa card-mentalidade">O que é a Desestabilização Emocional (tiltar)</h4>
     </div>
     <div class="container-cards-mentalidade">
-        <div class="card-mentalidade">O Mecanismo <span class="elemento-invisivel display-none">A amígdala (a parte do cérebro responsável pelas respostas emocionais de "luta ou fuga") assume o comando.</span></div>
-        <div class="card-mentalidade">O Impacto <span class="elemento-invisivel display-none">Ela desativa temporariamente o córtex pré-frontal, que é a área do cérebro responsável pelo pensamento lógico, planejamento e controle de impulsos. <span class="destaque">Você para de pensar e passa apenas a reagir.</span></span></div>
-        <div class="card-mentalidade">Quando ocorre <span class="elemento-invisivel display-none">Você tilta quando quer que o jogo aconteça de um jeito, mas as ações dos seus aliados ou dos inimigos mostram que você não tem o controle da partida.</span></div>
-        <div class="card-mentalidade">O que fazer <span class="elemento-invisivel display-none">Quando perceber, a melhor decisão técnica a ser tomada é pausar, respirar fundo e se afastar do jogo por algum tempo até que o córtex pré-frontal retome o controle.</span></div>
+        <div class="card-mentalidade quadrado-mentalidade">
+            <span class="destaque titulo-quadrado-mentalidade">O Mecanismo</span>
+            <p class="texto-quadrado-mentalidade"></p>
+        </div>
+        <div class="card-mentalidade quadrado-mentalidade">
+            <span class="destaque titulo-quadrado-mentalidade">O Impacto</span>
+            <p class="texto-quadrado-mentalidade"></p>
+        </div>
+        <div class="card-mentalidade quadrado-mentalidade">
+            <span class="destaque titulo-quadrado-mentalidade">Quando ocorre</span>
+            <p class="texto-quadrado-mentalidade"></p>
+        </div>
+        <div class="card-mentalidade quadrado-mentalidade">
+            <span class="destaque titulo-quadrado-mentalidade">O que fazer</span>
+            <p class="texto-quadrado-mentalidade"></p>
+        </div>
     </div>
+    <button id="reset-step-mentalidade" class="next-step destaque"><i class="fa-solid fa-rotate-left"></i></button>
     <div class="container-img-mentalidade">
         <p id="aviso-mentalidade">⚠️ Em <span class="destaque">TODOS</span> os seus jogos você vai <span class="destaque">mutar o chat</span> (tanto aliado
-        quanto inimigo) e <span class="destaque">mutar os emotes inimigos</span> para evitar distração ⚠️</p>
+        quanto inimigo) e <span class="destaque">mutar os emotes inimigos</span> para evitar distrações ⚠️</p>
         <Image 
             src={chatConfig}
             width={656}
@@ -30,3 +43,7 @@ import chatConfig from "@/assets/imgs/prints/chat_config.png";
         <p id="aviso-img-mentalidade">Mantenha essa configuração acima (certifique-se de também marcar a caixa de emotes)</p>
     </div>
 </div>
+
+<script>
+    import "@/assets/scripts/index/curso/mentalidade";
+</script>

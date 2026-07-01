@@ -4,6 +4,7 @@ import MyAccount from "@/components/index/MyAccount.astro";
 import Banner from "@/components/index/Banner.astro";
 import MonoChampion from "@/components/index/curso/MonoChampion.astro";
 import Mentalidade from "@/components/index/curso/Mentalidade.astro";
+import TrintaQuarenta from "@/components/index/curso/TrintaQuarenta.astro";
 import "@/assets/styles/pages/index/index.css";
 
 export async function getStaticPaths() {
@@ -48,14 +49,15 @@ lang={lang}
   <Banner />
   <MyAccount />
   <MonoChampion />
-  <Mentalidade />
-  <!--
   <TrintaQuarenta />
+  <Mentalidade />
+  <!--<Conclusao /> --:> Donate --> 
+  <footer id="footer-teste">© 2026 - 2026 | EloBetter - Todos os direitos reservados.</footer>
+  <!--
   <Vicios />
   <EloTips /> Dicas e principais erros para cada elo
   <MeuSegredo /> --:> os 2 jogos por dia
-  <Conclusao /> --:> Donate
+  <Afiliado />
   --> 
   
-  <footer id="footer-teste">© 2026 - 2026 | EloBetter - Todos os direitos reservados.</footer>
 </BaseLayout>

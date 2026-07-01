@@ -1,3 +1,5 @@
+import { ProximaSecao } from "./secoes";
+
 const lis = document.querySelectorAll(".li-monochampion");
 const nextBtn = document.getElementById("next-step-monochampion");
 const resetBtn = document.getElementById("reset-step-monochampion");
@@ -25,20 +27,16 @@ nextBtn.addEventListener("click", () => {
         lis[currentActiveIndex].classList.add("active");
         localStorage.setItem("monoIndex", currentActiveIndex);
     }
-    else {
-        const proximaSecao = document.getElementById("mentalidade");
-        if (proximaSecao) {
-            proximaSecao.scrollIntoView({ behavior: 'smooth' });
-        }
-    }
+    else
+        ProximaSecao("mentalidade");
 });
 
 resetBtn.addEventListener("click", () => {
-    lis.forEach((li, index) => {
-        if (index > 0) li.classList.remove("active");
+    lis.forEach(li => {
+        li.classList.remove("active");
     });
 
-    currentActiveIndex = currentActiveIndex >= 0 ? 0 : -1;
+    currentActiveIndex = -1;
     localStorage.setItem("monoIndex", currentActiveIndex);
     if (currentActiveIndex === -1) {
         window.addEventListener("scroll", VerificarScroll);
