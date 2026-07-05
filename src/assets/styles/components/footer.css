@@ -1,0 +1,35 @@
+.footer-principal{
+    padding: 30px;
+}
+.container-copyright-footer{
+    opacity: 0.7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: small;
+    user-select: none;
+}
+.lista-footer{
+    margin: 30px 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    list-style: none;
+    font-weight: bold;
+}
+
+.lista-footer li{
+    cursor: pointer;
+    padding: 6px 24px;
+    border-radius: 6px;
+}
+.lista-footer > li a{
+    color: rgba(235,235,235, 1);
+    text-decoration: none;
+}
+
+.lista-footer li:hover{
+    background: linear-gradient(rgba(33, 36, 42, 1), rgba(30, 33, 39, 1));
+}

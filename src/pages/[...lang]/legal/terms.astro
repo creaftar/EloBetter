@@ -1,0 +1,88 @@
+---
+import BaseLayout from "@/layout/BaseLayout.astro";
+import "@/assets/styles/pages/legal/legal.css"
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang: undefined } }, // Rota padrão (ex: home sem subpasta)
+    { params: { lang: 'en-us' } }, // América do Norte (NA)
+    { params: { lang: 'en-gb' } }, // Europa Ocidental - Inglês (EUW)
+    { params: { lang: 'en-au' } }, // Oceania (OCE)
+    { params: { lang: 'pt-br' } }, // Brasil (BR)
+    { params: { lang: 'es-mx' } }, // América Latina (LAN / LAS)
+    { params: { lang: 'es-es' } }, // Europa Ocidental - Espanhol (EUW)
+    { params: { lang: 'ko-kr' } }, // Coreia do Sul (KR)
+    { params: { lang: 'ja-jp' } }, // Japão (JP)
+    { params: { lang: 'tr-tr' } }, // Turquia (TR)
+    { params: { lang: 'vi-vn' } }, // Vietnã (VN)
+    { params: { lang: 'de-de' } }, // Alemanha / Alemão
+    { params: { lang: 'fr-fr' } }, // França / Francês
+    { params: { lang: 'it-it' } }, // Itália / Italiano
+    { params: { lang: 'pl-pl' } }, // Polônia / Polonês
+    { params: { lang: 'el-gr' } }, // Grécia / Grego
+    { params: { lang: 'ro-ro' } }, // Romênia / Romeno
+    { params: { lang: 'hu-hu' } }, // Hungria / Húngaro
+    { params: { lang: 'cs-cz' } }, // República Checa / Checo
+    { params: { lang: 'ru-ru' } }, // Rússia / Russo
+    { params: { lang: 'en-sg' } }, // Singapura - Inglês (SG)
+    { params: { lang: 'en-ph' } }, // Filipinas - Inglês (PH)
+    { params: { lang: 'th-th' } }, // Tailândia / Tailandês
+    { params: { lang: 'zh-tw' } }, // Taiwan / Chinês Tradicional
+    { params: { lang: 'ar-ae' } }, // Emirados Árabes Unidos / Árabe
+  ];
+}
+
+const lang = Astro.currentLocale || 'pt-br';
+---
+
+<BaseLayout
+  title="EloBetter - Termos de Uso"
+  description="Leia os Termos de Uso do EloBetter. Conheça a regra de utilização do site, licença de conteúdo e isenção de responsabilidade do guia de elo."
+  keywords="termos de uso elobetter, regulamento elobetter, uso do site, diretriz de comunidade"
+  lang={lang}
+>
+  <section>
+    <h1>Termos de Uso</h1>
+
+    <p>
+      Seja bem-vindo ao EloBetter. Ao acessar e utilizar este site, o usuário concorda em cumprir e respeitar a diretriz estipulada neste documento. Caso não concorde com algum termo, recomenda-se interromper o uso da plataforma.
+    </p>
+
+    <h2>1. Licença de Uso e Compartilhamento</h2>
+    <p>
+      O acesso ao conteúdo do site é gratuito e destinado para fim educativo e informativo. A diretriz para o uso do material estabelece que:
+    </p>
+    <ul>
+        <li><strong>Divulgação incentivada:</strong> É livre a indicação, citação ou demonstração do guia e da ferramenta em transmissão ao vivo (stream), vídeo ou rede social, sem a necessidade de autorização prévia. A menção ao nome EloBetter é fortemente recomendada como forma de apoiar o projeto, mas não é obrigatória.</li>
+        <li><strong>Plágio proibido:</strong> É estritamente proibido copiar, clonar, roubar o código-fonte ou republicar o artigo na íntegra de forma a se passar por autor original do conteúdo.</li>
+        <li><strong>Uso comercial restrito:</strong> Não é permitido utilizar qualquer parte do material para venda ou exibição pública paga sem consentimento prévio por escrito.</li>
+    </ul>
+
+    <h2>2. Isenção de Responsabilidade</h2>
+    <p>
+      Todo o material contido no EloBetter é fornecido para fim estritamente informativo e educativo. O site não garante resultado imediato de subida de elo, visto que o desempenho depende exclusivamente da habilidade, dedicação e tempo de treino de cada jogador.
+    </p>
+    <p>
+      Além disso, por utilizar dado público de API de terceiro (como Riot Games), o site não se responsabiliza por instabilidade temporária no fornecimento de estatística de partida decorrente de falha no servidor oficial do jogo.
+    </p>
+
+    <h2>3. Limitação de Responsabilidade</h2>
+    <p>
+      Em nenhum cenário o EloBetter será responsável por dano decorrente do uso ou da incapacidade de utilizar a ferramenta ou o guia, incluindo perda de dado ou interrupção de atividade na conta do jogo do usuário por mau uso de software de terceiro.
+    </p>
+
+    <h2>4. Link e Vinculação Externa</h2>
+    <p>
+      O site analisa o link inserido no artigo, mas não realiza monitoramento constante de todo site de terceiro conectado ao guia. A inclusão de qualquer link não significa endosso por parte do EloBetter. O uso de site vinculado ocorre por conta e risco do próprio usuário.
+    </p>
+
+    <h2>5. Modificação do Termo</h2>
+    <p>
+      O regulamento pode ser revisado e atualizado a qualquer momento, sem aviso prévio. Ao continuar a navegar pela plataforma após a alteração, o usuário aceita a versão mais recente do termo publicado.
+    </p>
+    <hr>
+    <p>
+      <strong>Última atualização:</strong> 5 de Julho de 2026.
+    </p>
+  </section>
+</BaseLayout>

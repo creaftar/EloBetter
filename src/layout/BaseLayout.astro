@@ -4,6 +4,7 @@ import "@/assets/styles/layout/BaseLayout.css";
 import "@/assets/styles/global.css";
 
 import Nav from "@/components/Nav.astro";
+import Footer from "@/components/Footer.astro"
 
 interface Props {
   title: string;
@@ -37,5 +38,6 @@ const {
         <div id="content-bl-body">
           <slot></slot>
         </div>
+        <Footer />
     </body>
 </html>

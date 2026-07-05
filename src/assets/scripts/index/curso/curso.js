@@ -1,3 +1,5 @@
+//export const traducao = elemento da traducao do curso global;
+
 export function ProximaSecao(secao){
     const proximaSecao = document.getElementById(secao);
     if (proximaSecao) {

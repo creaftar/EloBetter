@@ -9,6 +9,7 @@
     );
     height: 62px;
     width: 100%;
+    max-width: 2560px;
     color: white;
     position: fixed;
     z-index: 999;

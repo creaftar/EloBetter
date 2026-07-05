@@ -1,4 +1,4 @@
-import { ProximaSecao } from "./secoes";
+import { ProximaSecao } from "./curso";
 
 const lis = document.querySelectorAll(".li-monochampion");
 const nextBtn = document.getElementById("next-step-monochampion");
@@ -28,7 +28,7 @@ nextBtn.addEventListener("click", () => {
         localStorage.setItem("monoIndex", currentActiveIndex);
     }
     else
-        ProximaSecao("mentalidade");
+        ProximaSecao("trintaquarenta");
 });
 
 resetBtn.addEventListener("click", () => {

@@ -73,7 +73,8 @@
     gap: 9px;
 }
 .perfil-button{
-    background-color: rgba(50, 50, 50, 1);
+    
+    background: linear-gradient(rgba(100, 100, 100, 0.6), rgba(50, 50, 50, 1));
     color: wheat;
     font-weight: bold;
     padding: 6px 9px;

@@ -28,6 +28,7 @@ h1{
     font-weight: bold;
     text-wrap: balance;
     max-width: 32ch;
+    user-select: none;
 }
 h1::after {
     content: "\A ";

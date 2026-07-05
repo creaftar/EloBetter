@@ -1,0 +1,93 @@
+---
+import BaseLayout from "@/layout/BaseLayout.astro";
+import "@/assets/styles/pages/legal/legal.css"
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang: undefined } }, // Rota padrão (ex: home sem subpasta)
+    { params: { lang: 'en-us' } }, // América do Norte (NA)
+    { params: { lang: 'en-gb' } }, // Europa Ocidental - Inglês (EUW)
+    { params: { lang: 'en-au' } }, // Oceania (OCE)
+    { params: { lang: 'pt-br' } }, // Brasil (BR)
+    { params: { lang: 'es-mx' } }, // América Latina (LAN / LAS)
+    { params: { lang: 'es-es' } }, // Europa Ocidental - Espanhol (EUW)
+    { params: { lang: 'ko-kr' } }, // Coreia do Sul (KR)
+    { params: { lang: 'ja-jp' } }, // Japão (JP)
+    { params: { lang: 'tr-tr' } }, // Turquia (TR)
+    { params: { lang: 'vi-vn' } }, // Vietnã (VN)
+    { params: { lang: 'de-de' } }, // Alemanha / Alemão
+    { params: { lang: 'fr-fr' } }, // França / Francês
+    { params: { lang: 'it-it' } }, // Itália / Italiano
+    { params: { lang: 'pl-pl' } }, // Polônia / Polonês
+    { params: { lang: 'el-gr' } }, // Grécia / Grego
+    { params: { lang: 'ro-ro' } }, // Romênia / Romeno
+    { params: { lang: 'hu-hu' } }, // Hungria / Húngaro
+    { params: { lang: 'cs-cz' } }, // República Checa / Checo
+    { params: { lang: 'ru-ru' } }, // Rússia / Russo
+    { params: { lang: 'en-sg' } }, // Singapura - Inglês (SG)
+    { params: { lang: 'en-ph' } }, // Filipinas - Inglês (PH)
+    { params: { lang: 'th-th' } }, // Tailândia / Tailandês
+    { params: { lang: 'zh-tw' } }, // Taiwan / Chinês Tradicional
+    { params: { lang: 'ar-ae' } }, // Emirados Árabes Unidos / Árabe
+  ];
+}
+
+const lang = Astro.currentLocale || 'pt-br';
+---
+
+<BaseLayout
+  title="EloBetter - Política de Privacidade"
+  description="Confira a Política de Privacidade do EloBetter. Saiba como ocorre o tratamento de informação, uso de cookie e a segurança do guia para subir de elo."
+  keywords="privacidade elobetter, política de privacidade, segurança elobetter, guia de elo, cookie"
+  lang={lang}
+>
+  <section>
+    <h1>Política de Privacidade</h1>
+
+    <p>
+      No EloBetter, a privacidade não é apenas um termo jurídico; é a base da construção do conteúdo e de cada ferramenta. Esta política explica de forma clara como ocorre o tratamento de informação.
+    </p>
+
+    <h2>1. Navegação e Conteúdo</h2>
+    <p>
+      A maior parte do site funciona de forma informativa. É possível ler o guia, assistir ao vídeo e conferir a dica de elo de forma totalmente anônima, sem a necessidade de fornecer dado pessoal para acessar o conteúdo público.
+    </p>
+
+    <h2>2. Coleta de Informação</h2>
+    <p>
+      Ocorre a coleta de apenas o mínimo necessário para manter a plataforma funcional e segura:
+    </p>
+    <ul>
+      <li>
+        <strong>Log do Servidor:</strong> Há o recebimento de informação básica como endereço IP, tipo de navegador e página visitada para fim de segurança, prevenção de abuso e análise de tráfego.
+      </li>
+      <li>
+        <strong>Cookie:</strong> O site utiliza cookie para salvar preferência de navegação (como o modo escuro) e para entender qual guia ou personagem é o mais procurado, ajudando a melhorar o conteúdo.
+      </li>
+    </ul>
+
+    <h2>3. Integração e Dado de Terceiro (Riot Games, Steam, etc.)</h2>
+    <p>
+      <strong>Nota importante:</strong> A ferramenta de consulta de perfil (como checar elo atual e estatísticas), utiliza dados públicos e consumidos diretamente da API oficial do jogo.
+    </p>
+
+    <h2>4. Link para Terceiro</h2>
+    <p>
+      O guia pode conter link para site externo, canal de streamer, plataforma de vídeo ou rede social. O site não tem controle sobre o conteúdo ou a prática de privacidade de terceiro e não assume responsabilidade por respectiva política.
+    </p>
+
+    <h2>5. Segurança e Contato</h2>
+    <p>
+      O site não comercializa ou compartilha dados com terceiros. Caso ocorra contato por e-mail ou formulário para sugestão ou dúvida, o dado será usado exclusivamente para responder à solicitação e será excluído após o atendimento.
+    </p>
+
+    <h2>6. Consentimento</h2>
+    <p>
+      Ao utilizar o EloBetter, o usuário concorda com a prática descrita nesta página. Esta política pode ser atualizada ocasionalmente para refletir melhoria no guia.
+    </p>
+    <hr>
+    <p>
+      <strong>Última atualização:</strong> 5 de Julho de 2026.
+    </p>
+  </section>
+</BaseLayout>

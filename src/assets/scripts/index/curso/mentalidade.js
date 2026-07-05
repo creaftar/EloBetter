@@ -1,4 +1,4 @@
-import { ProximaSecao } from "./secoes";
+import { ProximaSecao } from "./curso";
 
 const textos = [
     ``,
@@ -59,7 +59,7 @@ function GerarLetras(i, pEl) {
         if (letrasDigitadas < textos[i].length) {
             pEl.innerHTML = textos[i].slice(0, letrasDigitadas + 1);
             letrasDigitadas++;
-            setTimeout(digitar, 30);
+            setTimeout(digitar, 20);
         } else {
             _estaDigitando = false;
             resetBtn.classList.remove("disabled");

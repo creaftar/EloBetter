@@ -1,3 +1,21 @@
+.container-trinta-quarenta{
+  display: flex;
+  width: 90%;
+  max-width: 1600px;
+  align-self: center;
+  justify-self: center;
+  text-align: justify;
+  gap: 12px;
+  padding: 30px 9px;
+  height: calc(fit-content + 300px);
+}
+
+.container-buttons-trintaquarenta{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .grafico-colunas-container {
   display: flex;
   justify-content: center;
@@ -78,4 +96,23 @@
 
 .coluna-wrapper:hover .coluna-porcentagem {
   color: #c89b3c;
+}
+
+@media screen and (max-width: 1359px){
+  .container-trinta-quarenta{
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 500px){
+  .container-trinta-quarenta{
+    flex-direction: column;
+  }
+  .grafico-colunas-container {
+    border: none;
+    gap: 30px;
+  }
+  
+  .coluna-wrapper {
+    width: 75px;
+  }
 }

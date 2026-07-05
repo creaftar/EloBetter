@@ -1,0 +1,72 @@
+---
+import BaseLayout from "@/layout/BaseLayout.astro";
+import "@/assets/styles/pages/legal/legal.css"
+
+export async function getStaticPaths() {
+  return [
+    { params: { lang: undefined } }, // Rota padrão (ex: home sem subpasta)
+    { params: { lang: 'en-us' } }, // América do Norte (NA)
+    { params: { lang: 'en-gb' } }, // Europa Ocidental - Inglês (EUW)
+    { params: { lang: 'en-au' } }, // Oceania (OCE)
+    { params: { lang: 'pt-br' } }, // Brasil (BR)
+    { params: { lang: 'es-mx' } }, // América Latina (LAN / LAS)
+    { params: { lang: 'es-es' } }, // Europa Ocidental - Espanhol (EUW)
+    { params: { lang: 'ko-kr' } }, // Coreia do Sul (KR)
+    { params: { lang: 'ja-jp' } }, // Japão (JP)
+    { params: { lang: 'tr-tr' } }, // Turquia (TR)
+    { params: { lang: 'vi-vn' } }, // Vietnã (VN)
+    { params: { lang: 'de-de' } }, // Alemanha / Alemão
+    { params: { lang: 'fr-fr' } }, // França / Francês
+    { params: { lang: 'it-it' } }, // Itália / Italiano
+    { params: { lang: 'pl-pl' } }, // Polônia / Polonês
+    { params: { lang: 'el-gr' } }, // Grécia / Grego
+    { params: { lang: 'ro-ro' } }, // Romênia / Romeno
+    { params: { lang: 'hu-hu' } }, // Hungria / Húngaro
+    { params: { lang: 'cs-cz' } }, // República Checa / Checo
+    { params: { lang: 'ru-ru' } }, // Rússia / Russo
+    { params: { lang: 'en-sg' } }, // Singapura - Inglês (SG)
+    { params: { lang: 'en-ph' } }, // Filipinas - Inglês (PH)
+    { params: { lang: 'th-th' } }, // Tailândia / Tailandês
+    { params: { lang: 'zh-tw' } }, // Taiwan / Chinês Tradicional
+    { params: { lang: 'ar-ae' } }, // Emirados Árabes Unidos / Árabe
+  ];
+}
+
+const lang = Astro.currentLocale || 'pt-br';
+---
+
+<BaseLayout
+  title="EloBetter - Sobre"
+  description="Conheça o EloBetter, o guia definitivo planejado para o jogador que busca evolução constante, análise de estatística e melhora de desempenho no jogo."
+  keywords="sobre elobetter, guia de elo, evolução na gameplay, análise de estatística, melhora de elo"
+  lang={lang}
+>
+  <section>
+    <h1>Sobre o EloBetter</h1>
+
+    <p>
+      O EloBetter nasceu com o propósito claro de transformar a jornada de quem busca evolução em ambiente competitivo. O projeto funciona como um guia centralizado, focado em fornecer conhecimento prático, análise estratégica e dado relevante para o jogador que deseja aprimorar o desempenho e subir de elo.
+    </p>
+
+    <h2>O Objetivo da Plataforma</h2>
+    <p>
+      O foco principal é simplificar o caminho do aprendizado. Em vez de desperdiçar tempo com conteúdo genérico, o usuário 
+      encontra no site uma análise direcionada com dicas imediatas para aplicar em suas partidas.
+    </p>
+
+    <h2>O Diferencial do Conteúdo</h2>
+    <p>
+      Cada material disponível é estruturado com base em dado real e cenário competitivo. O site prioriza a qualidade da 
+      informação, garantindo que o guia sirva como um suporte verdadeiro para a tomada de decisão inteligente dentro do jogo.
+    </p>
+
+    <h2>A Filosofia do Projeto</h2>
+    <p>
+      Acredita-se que a consistência e a mentalidade correta mudam o resultado da gameplay. Por isso, o EloBetter não oferece promessa milagrosa, mas sim uma base sólida de estudo e acompanhamento para que cada jogador consiga alcançar o elo desejado por meio do próprio mérito e esforço.
+    </p>
+    <hr>
+    <p>
+      <strong>Última atualização:</strong> 5 de Julho de 2026.
+    </p>
+  </section>
+</BaseLayout>
