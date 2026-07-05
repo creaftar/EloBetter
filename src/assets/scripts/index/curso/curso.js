@@ -1,4 +1,4 @@
-//export const traducao = elemento da traducao do curso global;
+//export const traducao = document.getElementById("i18n");
 
 export function ProximaSecao(secao){
     const proximaSecao = document.getElementById(secao);

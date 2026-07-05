@@ -20,6 +20,13 @@ const winrateEl = document.getElementById("tier-perfil-winrate");
 
 let perfil = await BuscarPerfil();
 
+const container = document.getElementById("myaccount");
+const t = container && container.dataset.translations 
+  ? JSON.parse(container.dataset.translations) 
+  : {};
+
+console.log(t);
+
 copiarBtn.addEventListener("click", CopiarNickname);
 atualizarBtn.addEventListener("click", async () => {
     await AtualizarPerfil();
@@ -51,7 +58,7 @@ async function AtualizarInterface(botaoChamando = false){
     setInterval(() => {
         VerificarEstadoBotao();
         AtualizarTextoTempo();
-    }, 60000);
+    }, 1000);
 
     return true;
 }
@@ -61,18 +68,25 @@ function AtualizarRank(ranking){
     const losses = ranking.losses;
     const totalJogos = wins + losses;
 
-    rankEl.textContent = ranking.tier;
-    /*if(ranking.tier === "MASTER" || ranking.tier === "GRANDMASTER" || ranking.tier === "CHALLENGER")
+    const tierTraduzido = t[`tier_${ranking.tier.toLowerCase()}`] || ranking.tier;
+    rankEl.textContent = tierTraduzido;
+    
+    if(ranking.tier === "MASTER" || ranking.tier === "GRANDMASTER" || ranking.tier === "CHALLENGER") {
         divisionEl.textContent = "";
-    else*/
-        divisionEl.textContent = ranking.rank;
-    lpEl.textContent = ranking.leaguePoints + ' LP'; 
+    } else {
+        divisionEl.textContent = " " + ranking.rank;
+    }
+    
+    lpEl.textContent = `${ranking.leaguePoints} ${t.leaguePoints}`; 
     winsEl.textContent = ranking.wins;
     lossesEl.textContent = ranking.losses;
 
-    const winrate = (wins / totalJogos) * 100;
-    
-    winrateEl.textContent = `Winrate: ${Math.ceil(winrate)}%`;
+    const winrateCalculado = Math.ceil((wins / totalJogos) * 100);
+    if (t.winrate) {
+        winrateEl.textContent = t.winrate.replace("{value}", winrateCalculado);
+    } else {
+        winrateEl.textContent = `${winrateCalculado}% Winrate`;
+    }
 }
 
 function GerarImg(){
@@ -110,28 +124,38 @@ async function CopiarNickname() {
 
 function AtualizarTextoTempo() {
     if (!_lastUpdate) {
-        lastUpdateEl.textContent = "Nunca atualizado";
+        lastUpdateEl.textContent = t.time_never || "Nunca atualizado";
         return;
     }
     
     const agora = new Date();
     const ultimaData = new Date(_lastUpdate);
-    
     const diferencaMs = agora - ultimaData; 
 
     const diferencaEmSegundos = Math.floor(diferencaMs / 1000);
     const diferencaEmMinutos = Math.floor(diferencaEmSegundos / 60);
     const diferencaEmHoras = Math.floor(diferencaEmMinutos / 60);
 
+    let textoTempo = "";
+
     if (diferencaEmHoras >= 1) {
-        lastUpdateEl.textContent = `Última atualização: há ${diferencaEmHoras} hora(s)`;
+        const unit = diferencaEmHoras > 1 ? t.time_hours : t.time_hour;
+        textoTempo = `${diferencaEmHoras} ${unit || "hora(s)"}`;
     } 
     else if (diferencaEmMinutos >= 1) {
-        lastUpdateEl.textContent = `Última atualização: há ${diferencaEmMinutos} minuto(s)`;
+        const unit = diferencaEmMinutos > 1 ? t.time_minutes : t.time_minute;
+        textoTempo = `${diferencaEmMinutos} ${unit || "minuto(s)"}`;
     } 
     else {
         const segundos = diferencaEmSegundos <= 0 ? 1 : diferencaEmSegundos;
-        lastUpdateEl.textContent = `Última atualização: há ${segundos} segundo(s)`;
+        const unit = segundos > 1 ? t.time_seconds : t.time_second;
+        textoTempo = `${segundos} ${unit || "segundo(s)"}`;
+    }
+
+    if (t.last_update_format) {
+        lastUpdateEl.textContent = t.last_update_format.replace("{time}", textoTempo);
+    } else {
+        lastUpdateEl.textContent = `Última atualização: há ${textoTempo}`;
     }
 }
 
