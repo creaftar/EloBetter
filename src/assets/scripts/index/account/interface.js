@@ -25,8 +25,6 @@ const t = container && container.dataset.translations
   ? JSON.parse(container.dataset.translations) 
   : {};
 
-console.log(t);
-
 copiarBtn.addEventListener("click", CopiarNickname);
 atualizarBtn.addEventListener("click", async () => {
     await AtualizarPerfil();

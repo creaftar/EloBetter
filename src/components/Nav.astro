@@ -72,20 +72,44 @@ lang = lang === "PT" ? "PT" : lang.split("-")[0].toUpperCase();
             { code: 'th-th', label: 'ภาษาไทย' },
             { code: 'zh-tw', label: '繁體中文' },
             { code: 'ar-ae', label: 'العربية' }
-        ].map((idioma) => (
+        ].map((idioma) => {
+            const { pathname } = Astro.url;
+            const idiomaAtual = Astro.currentLocale;
+            let caminhoSemIdioma = pathname;
+            
+            if (idiomaAtual && pathname.startsWith(`/${idiomaAtual}`)) {
+            caminhoSemIdioma = pathname.replace(`/${idiomaAtual}`, "");
+            }
+
+            if (caminhoSemIdioma === "") caminhoSemIdioma = "/";
+
+            const novoHref = idioma.code === "en-us" 
+            ? `${caminhoSemIdioma}` 
+            : `/${idioma.code}${caminhoSemIdioma}`;
+
+            // 1. Remove barras duplicadas (ex: //legal -> /legal)
+            // 2. Remove a barra do final (ex: /ru-ru/ -> /ru-ru)
+            const hrefFinal = novoHref.replace(/\/+/g, "/").replace(/\/$/, "");
+            
+            // Se o resultado for totalmente vazio (ex: na home do idioma padrão), vira "/"
+            const hrefPronto = hrefFinal === "" ? "/" : hrefFinal;
+
+            return (
             <li>
                 <a 
-                    href={`/${idioma.code}`} 
-                    class:list={[
-                        'menu-link', 
-                        { 'idioma-ativo': Astro.currentLocale === idioma.code }
-                    ]}
+                href={hrefPronto} 
+                class:list={[
+                    'menu-link', 
+                    { 'idioma-ativo': Astro.currentLocale === idioma.code }
+                ]}
                 >
-                    {idioma.label}
+                {idioma.label}
                 </a>
             </li>
-        ))}
-    </ul>
+            );
+        })
+        }
+        </ul>
         <i class="fa-solid fa-globe"></i>
     </div>
 </nav>

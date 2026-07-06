@@ -1,38 +1,36 @@
 ---
-import "@/assets/styles/pages/index/conclusao.css"
+import "@/assets/styles/pages/index/conclusao.css";
+
+const { lang = "pt-br" } = Astro.props;
+
+const t = await import(`../../i18n/pages/index/conclusao/${lang}.json`).then(m => m.default);
 ---
 
 <div id="conclusao">
     <div class="container-titulo-descricao">
-        <h4 class="titulo-conclusao">Orgulhosamente, um Guia Gratuito</h4>
-        <p class="descricao-conclusao">Entre 2020 e 2021, criei um guia despretensioso para ajudar um jogador que me chamou no privado perguntando como eu 
-            tinha subido de elo. O resultado? Ele foi do Platina ao Diamante em menos de um mês. Em 2026, decidi transformar essa 
-            mesma base em um site, unindo minha experiência no League of Legends ao meu aprendizado em programação para ajudar 
-            ainda mais pessoas a evoluírem.
+        <h4 class="titulo-conclusao" set:html={t.title || "Orgulhosamente, um Guia Gratuito"}></h4>
+        <p class="descricao-conclusao" set:html={t.description || "Entre 2020 e 2021, criei um guia despretensioso para ajudar um jogador que me chamou no privado perguntando como eu tinha subido de elo. O resultado? Ele foi do Platina ao Diamante em menos de um mês. Em 2026, decidi transformar essa mesma base em um site, unindo minha experiência no League of Legends ao meu aprendizado em programação para ajudar ainda mais pessoas a evoluírem."}>
         </p>
     </div>
     <div class="container-card-conclusao">
         <div class="card-conclusao">
             <div class="icon-conclusao"><i class="fa-solid fa-book-bookmark"></i></div> 
-            <h5 class="subtitulo-conclusao">Direcionamento Prático</h5>
-            <p class="texto-conclusao">Estratégias testadas e validadas por quem já sentiu na pele a dificuldade de subir de elo. 
-                Sem enrolação.</p>
+            <h5 class="subtitulo-conclusao" set:html={t.card_1_title || "Direcionamento Prático"}></h5>
+            <p class="texto-conclusao" set:html={t.card_1_text || "Estratégias testadas e validadas por quem já sentiu na pele a dificuldade de subir de elo. Sem enrolação."}></p>
         </div>
         <div class="card-conclusao">
             <div class="icon-conclusao"><i class="fa-solid fa-people-pulling"></i></div> 
-            <h5 class="subtitulo-conclusao">De Jogador para Jogador</h5>
-            <p class="texto-conclusao">Sem jargões corporativos ou análises impossíveis de aplicar. É a visão de quem 
-                joga e entende a realidade das filas ranqueadas.</p>
+            <h5 class="subtitulo-conclusao" set:html={t.card_2_title || "De Jogador para Jogador"}></h5>
+            <p class="texto-conclusao" set:html={t.card_2_text || "Sem jargões corporativos ou análises impossíveis de aplicar. É a visão de quem joga e entende a realidade das filas ranqueadas."}></p>
         </div>
         <div class="card-conclusao">
             <div class="icon-conclusao"><i class="fa-solid fa-chart-simple"></i></div> 
-            <h5 class="subtitulo-conclusao">Evolução Constante</h5>
-            <p class="texto-conclusao">O foco não é apenas te dar o "caminho das pedras", mas te ensinar a mentalidade 
-                necessária para continuar subindo.</p>
+            <h5 class="subtitulo-conclusao" set:html={t.card_3_title || "Evolução Constante"}></h5>
+            <p class="texto-conclusao" set:html={t.card_3_text || "O foco não é apenas te dar o 'caminho das pedras', mas te ensinar a mentalidade necessária para continuar subindo."}></p>
         </div>
     </div>
     <div class="container-apoio-conclusao">
-        <p>Quer apoiar esse projeto? Deixe sua contribuição aqui</p>
-        <a href="#" target="_blank" id="apoiar">Doar ☕</a>
+        <p set:html={t.support_text || "Quer apoiar esse projeto? Deixe sua contribuição aqui"}></p>
+        <a href="#" target="_blank" id="apoiar">{t.btn_donate || "Doar ☕"}</a>
     </div>
 </div>

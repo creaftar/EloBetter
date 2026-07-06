@@ -1,12 +1,11 @@
 import { ProximaSecao } from "./curso";
 
-const textos = [
-    ``,
-    `A amígdala assume o comando. (A parte do cérebro responsável pelas respostas emocionais de "luta ou fuga")`,
-    `Ela desativa temporariamente o córtex pré-frontal, que é a área do cérebro responsável pelo pensamento lógico, planejamento e controle de impulsos. <span class="destaque">Você para de pensar e passa apenas a reagir.`,
-    `Você tilta quando quer que o jogo aconteça de um jeito, mas as ações dos seus aliados ou dos inimigos mostram que você não tem o controle da partida.`,
-    `Quando perceber, a melhor decisão técnica a ser tomada é pausar, respirar fundo e se afastar do jogo por algum tempo até que o córtex pré-frontal retome o controle.`
-]
+const container = document.getElementById("traducao-mentalidade");
+const t = container && container.dataset.translations 
+  ? JSON.parse(container.dataset.translations) 
+  : {};
+
+const textos = [...t];
 
 const quadrados = document.querySelectorAll(".quadrado-mentalidade");
 const resetBtn = document.getElementById("reset-step-mentalidade");

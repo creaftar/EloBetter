@@ -4,40 +4,85 @@ import "@/assets/styles/layout/BaseLayout.css";
 import "@/assets/styles/global.css";
 
 import Nav from "@/components/Nav.astro";
-import Footer from "@/components/Footer.astro"
+import Footer from "@/components/Footer.astro";
+import { getAbsoluteLocaleUrl } from 'astro:i18n';
 
 interface Props {
-  title: string;
-  description: string;
-  keywords: string;
-  lang: string;
+  title?: string;
+  description?: string;
+  keywords?: string;
+  lang?: string;
 }
+
+const idiomaAtual = Astro.currentLocale || "pt-br";
 
 const { 
   title = "EloBetter - Aprenda a Subir de Elo no League of Legends", 
   description = "Cansado de trolls, afk's e smurfs? Aprenda a subir de elo de verdade com este guia extremamente compacto, sem enrolações.", 
-  keywords = "elo, league of legends, gold lol, como subir de elo no lol, como subir de elo, como sair do prata, como sair do ouro, como sair do ferro, como sair do bronze, como sair do platina, como sair do diamante, como sair do mestre, como sair do grão mestre, como pegar top 1",
-  lang = "pt-br"
+  keywords = "elo, league of legends, como subir de elo no lol, como sair do prata",
+  lang="pt-br"
 } = Astro.props as Props;
 
+// 1. Array exato com os códigos dos idiomas suportados pelo seu site
+const todosOsIdiomas = [
+  "en-us", "en-gb", "en-au", "pt-br", "es-mx", "es-es", "ko-kr", "ja-jp",
+  "tr-tr", "vi-vn", "de-de", "fr-fr", "it-it", "pl-pl", "el-gr", "ro-ro",
+  "hu-hu", "cs-cz", "ru-ru", "en-sg", "en-ph", "th-th", "zh-tw", "ar-ae"
+];
+
+// 2. Descobre qual é a subpágina atual limpando o prefixo do idioma da URL
+const padraoIdioma = new RegExp(`^/(${todosOsIdiomas.join('|')})`);
+const subCaminhoLimpo = Astro.url.pathname.replace(padraoIdioma, '').replace(/\/$/, '') || '/';
+
+// 3. Define a URL base para as tags absolutas
+const urlSite = "https://elobetter.com"; 
+
+// 4. Gera as URLs absolutas corretas sem barras no final
+const urlCanonica = getAbsoluteLocaleUrl(idiomaAtual, subCaminhoLimpo).replace(/\/$/, "");
+const urlDefaultX = getAbsoluteLocaleUrl('en-us', subCaminhoLimpo).replace(/\/$/, "");
 ---
 
 <!DOCTYPE html>
-<html lang={lang}>
+<html lang={idiomaAtual}>
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
+        
         <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta name="keywords" content={keywords} />
+        <meta name="robots" content="index, follow" />
+
+        <link rel="canonical" href={urlCanonica} />
+
+        {todosOsIdiomas.map((idioma) => {
+            const urlTraduzida = getAbsoluteLocaleUrl(idioma, subCaminhoLimpo).replace(/\/$/, "");
+            return <link rel="alternate" hreflang={idioma} href={urlTraduzida} />;
+        })}
+
+        <link rel="alternate" hreflang="x-default" href={urlDefaultX} />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={urlCanonica} />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={`${urlSite}/assets/imgs/icon-light.svg`} />
+
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content={urlCanonica} />
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content={description} />
+        <meta property="twitter:image" content={`${urlSite}/assets/imgs/icon-light.svg`} />
+
         <link rel="icon" type="image/svg+xml" href="/assets/imgs/icon-light.svg" media="(prefers-color-scheme: light)" />
         <link rel="icon" type="image/svg+xml" href="/assets/imgs/icon.svg" media="(prefers-color-scheme: dark)" />
-        <meta name="description" content={description} />
     </head>
     <body>
-        <Nav lang={lang} />
+        <Nav lang={idiomaAtual} />
         <div id="content-bl-body">
           <slot></slot>
         </div>
-        <Footer />
+        <Footer lang={idiomaAtual} />
     </body>
 </html>

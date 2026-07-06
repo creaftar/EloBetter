@@ -32,41 +32,73 @@ export async function getStaticPaths() {
   ];
 }
 
-const lang = Astro.currentLocale || 'pt-br';
+// Imports dos arquivos de tradução JSON
+import en_us from "@/i18n/pages/about/en-us.json";
+import en_gb from "@/i18n/pages/about/en-gb.json";
+import en_au from "@/i18n/pages/about/en-au.json";
+import pt_br from "@/i18n/pages/about/pt-br.json";
+import es_mx from "@/i18n/pages/about/es-mx.json";
+import es_es from "@/i18n/pages/about/es-es.json";
+import ko_kr from "@/i18n/pages/about/ko-kr.json";
+import ja_jp from "@/i18n/pages/about/ja-jp.json";
+import tr_tr from "@/i18n/pages/about/tr-tr.json";
+import vi_vn from "@/i18n/pages/about/vi-vn.json";
+import de_de from "@/i18n/pages/about/de-de.json";
+import fr_fr from "@/i18n/pages/about/fr-fr.json";
+import it_it from "@/i18n/pages/about/it-it.json";
+import pl_pl from "@/i18n/pages/about/pl-pl.json";
+import el_gr from "@/i18n/pages/about/el-gr.json";
+import ro_ro from "@/i18n/pages/about/ro-ro.json";
+import hu_hu from "@/i18n/pages/about/hu-hu.json";
+import cs_cz from "@/i18n/pages/about/cs-cz.json";
+import ru_ru from "@/i18n/pages/about/ru-ru.json";
+import en_sg from "@/i18n/pages/about/en-sg.json";
+import en_ph from "@/i18n/pages/about/en-ph.json";
+import th_th from "@/i18n/pages/about/th-th.json";
+import zh_tw from "@/i18n/pages/about/zh-tw.json";
+import ar_ae from "@/i18n/pages/about/ar-ae.json";
+
+// Mapeamento dos objetos importados (usando hífens para bater com a URL)
+const locales = {
+  "en-us": en_us, "en-gb": en_gb, "en-au": en_au, "pt-br": pt_br,
+  "es-mx": es_mx, "es-es": es_es, "ko-kr": ko_kr, "ja-jp": ja_jp,
+  "tr-tr": tr_tr, "vi-vn": vi_vn, "de-de": de_de, "fr-fr": fr_fr,
+  "it-it": it_it, "pl-pl": pl_pl, "el-gr": el_gr, "ro-ro": ro_ro,
+  "hu-hu": hu_hu, "cs-cz": cs_cz, "ru-ru": ru_ru, "en-sg": en_sg,
+  "en-ph": en_ph, "th-th": th_th, "zh-tw": zh_tw, "ar-ae": ar_ae
+};
+
+// Captura e definição da linguagem atual
+const { lang: paramLang } = Astro.params;
+const lang = paramLang || Astro.currentLocale || 'pt-br';
+
+// Fallback seguro caso a linguagem não exista no objeto de locales
+const t = locales[lang as keyof typeof locales] || locales["pt-br"];
 ---
 
 <BaseLayout
-  title="EloBetter - Sobre"
-  description="Conheça o EloBetter, o guia definitivo planejado para o jogador que busca evolução constante, análise de estatística e melhora de desempenho no jogo."
-  keywords="sobre elobetter, guia de elo, evolução na gameplay, análise de estatística, melhora de elo"
+  title={t.meta_title}
+  description={t.meta_description}
+  keywords={t.meta_keywords}
   lang={lang}
 >
   <section>
-    <h1>Sobre o EloBetter</h1>
+    <h1>{t.title}</h1>
 
-    <p>
-      O EloBetter nasceu com o propósito claro de transformar a jornada de quem busca evolução em ambiente competitivo. O projeto funciona como um guia centralizado, focado em fornecer conhecimento prático, análise estratégica e dado relevante para o jogador que deseja aprimorar o desempenho e subir de elo.
-    </p>
+    <p>{t.p1}</p>
 
-    <h2>O Objetivo da Plataforma</h2>
-    <p>
-      O foco principal é simplificar o caminho do aprendizado. Em vez de desperdiçar tempo com conteúdo genérico, o usuário 
-      encontra no site uma análise direcionada com dicas imediatas para aplicar em suas partidas.
-    </p>
+    <h2>{t.h2_objective}</h2>
+    <p>{t.p2}</p>
 
-    <h2>O Diferencial do Conteúdo</h2>
-    <p>
-      Cada material disponível é estruturado com base em dado real e cenário competitivo. O site prioriza a qualidade da 
-      informação, garantindo que o guia sirva como um suporte verdadeiro para a tomada de decisão inteligente dentro do jogo.
-    </p>
+    <h2>{t.h2_differential}</h2>
+    <p>{t.p3}</p>
 
-    <h2>A Filosofia do Projeto</h2>
-    <p>
-      Acredita-se que a consistência e a mentalidade correta mudam o resultado da gameplay. Por isso, o EloBetter não oferece promessa milagrosa, mas sim uma base sólida de estudo e acompanhamento para que cada jogador consiga alcançar o elo desejado por meio do próprio mérito e esforço.
-    </p>
+    <h2>{t.h2_philosophy}</h2>
+    <p>{t.p4}</p>
+    
     <hr>
     <p>
-      <strong>Última atualização:</strong> 5 de Julho de 2026.
+      <strong>{t.last_update}</strong> {t.date}
     </p>
   </section>
 </BaseLayout>

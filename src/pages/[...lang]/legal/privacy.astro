@@ -31,63 +31,91 @@ export async function getStaticPaths() {
     { params: { lang: 'ar-ae' } }, // Emirados Árabes Unidos / Árabe
   ];
 }
+// Imports dos arquivos de tradução JSON
+import en_us from "@/i18n/pages/privacy/en-us.json";
+import en_gb from "@/i18n/pages/privacy/en-gb.json";
+import en_au from "@/i18n/pages/privacy/en-au.json";
+import pt_br from "@/i18n/pages/privacy/pt-br.json";
+import es_mx from "@/i18n/pages/privacy/es-mx.json";
+import es_es from "@/i18n/pages/privacy/es-es.json";
+import ko_kr from "@/i18n/pages/privacy/ko-kr.json";
+import ja_jp from "@/i18n/pages/privacy/ja-jp.json";
+import tr_tr from "@/i18n/pages/privacy/tr-tr.json";
+import vi_vn from "@/i18n/pages/privacy/vi-vn.json";
+import de_de from "@/i18n/pages/privacy/de-de.json";
+import fr_fr from "@/i18n/pages/privacy/fr-fr.json";
+import it_it from "@/i18n/pages/privacy/it-it.json";
+import pl_pl from "@/i18n/pages/privacy/pl-pl.json";
+import el_gr from "@/i18n/pages/privacy/el-gr.json";
+import ro_ro from "@/i18n/pages/privacy/ro-ro.json";
+import hu_hu from "@/i18n/pages/privacy/hu-hu.json";
+import cs_cz from "@/i18n/pages/privacy/cs-cz.json";
+import ru_ru from "@/i18n/pages/privacy/ru-ru.json";
+import en_sg from "@/i18n/pages/privacy/en-sg.json";
+import en_ph from "@/i18n/pages/privacy/en-ph.json";
+import th_th from "@/i18n/pages/privacy/th-th.json";
+import zh_tw from "@/i18n/pages/privacy/zh-tw.json";
+import ar_ae from "@/i18n/pages/privacy/ar-ae.json";
 
-const lang = Astro.currentLocale || 'pt-br';
+// Mapeamento dos objetos importados (usando hífens para bater com a URL)
+const locales = {
+  "en-us": en_us, "en-gb": en_gb, "en-au": en_au, "pt-br": pt_br,
+  "es-mx": es_mx, "es-es": es_es, "ko-kr": ko_kr, "ja-jp": ja_jp,
+  "tr-tr": tr_tr, "vi-vn": vi_vn, "de-de": de_de, "fr-fr": fr_fr,
+  "it-it": it_it, "pl-pl": pl_pl, "el-gr": el_gr, "ro-ro": ro_ro,
+  "hu-hu": hu_hu, "cs-cz": cs_cz, "ru-ru": ru_ru, "en-sg": en_sg,
+  "en-ph": en_ph, "th-th": th_th, "zh-tw": zh_tw, "ar-ae": ar_ae
+};
+
+// Captura e definição da linguagem atual
+const { lang: paramLang } = Astro.params;
+const lang = paramLang || Astro.currentLocale || 'pt-br';
+
+// Fallback seguro caso a linguagem não exista no objeto de locales
+const t = locales[lang as keyof typeof locales] || locales["pt-br"];
 ---
-
 <BaseLayout
-  title="EloBetter - Política de Privacidade"
-  description="Confira a Política de Privacidade do EloBetter. Saiba como ocorre o tratamento de informação, uso de cookie e a segurança do guia para subir de elo."
-  keywords="privacidade elobetter, política de privacidade, segurança elobetter, guia de elo, cookie"
+  title={t.meta_title || "EloBetter - Política de Privacidade"}
+  description={t.meta_description || "Confira a Política de Privacidade do EloBetter..."}
+  keywords={t.meta_keywords || "privacidade elobetter, política de privacidade..."}
   lang={lang}
 >
   <section>
-    <h1>Política de Privacidade</h1>
+    <h1>{t.title || "Política de Privacidade"}</h1>
 
-    <p>
-      No EloBetter, a privacidade não é apenas um termo jurídico; é a base da construção do conteúdo e de cada ferramenta. Esta política explica de forma clara como ocorre o tratamento de informação.
-    </p>
+    <p>{t.p1}</p>
 
-    <h2>1. Navegação e Conteúdo</h2>
-    <p>
-      A maior parte do site funciona de forma informativa. É possível ler o guia, assistir ao vídeo e conferir a dica de elo de forma totalmente anônima, sem a necessidade de fornecer dado pessoal para acessar o conteúdo público.
-    </p>
+    <h2>{t.h2_navigation || "1. Navegação e Conteúdo"}</h2>
+    <p>{t.p2}</p>
 
-    <h2>2. Coleta de Informação</h2>
-    <p>
-      Ocorre a coleta de apenas o mínimo necessário para manter a plataforma funcional e segura:
-    </p>
+    <h2>{t.h2_collection || "2. Coleta de Informação"}</h2>
+    <p>{t.p3}</p>
     <ul>
       <li>
-        <strong>Log do Servidor:</strong> Há o recebimento de informação básica como endereço IP, tipo de navegador e página visitada para fim de segurança, prevenção de abuso e análise de tráfego.
+        <strong>{t.li_log_title || "Log do Servidor:"}</strong> {t.li_log_text}
       </li>
       <li>
-        <strong>Cookie:</strong> O site utiliza cookie para salvar preferência de navegação (como o modo escuro) e para entender qual guia ou personagem é o mais procurado, ajudando a melhorar o conteúdo.
+        <strong>{t.li_cookie_title || "Cookie:"}</strong> {t.li_cookie_text}
       </li>
     </ul>
 
-    <h2>3. Integração e Dado de Terceiro (Riot Games, Steam, etc.)</h2>
+    <h2>{t.h2_integration || "3. Integração e Dado de Terceiro (Riot Games, Steam, etc.)"}</h2>
     <p>
-      <strong>Nota importante:</strong> A ferramenta de consulta de perfil (como checar elo atual e estatísticas), utiliza dados públicos e consumidos diretamente da API oficial do jogo.
+      <strong>{t.note_title || "Nota importante:"}</strong> {t.note_text}
     </p>
 
-    <h2>4. Link para Terceiro</h2>
-    <p>
-      O guia pode conter link para site externo, canal de streamer, plataforma de vídeo ou rede social. O site não tem controle sobre o conteúdo ou a prática de privacidade de terceiro e não assume responsabilidade por respectiva política.
-    </p>
+    <h2>{t.h2_links || "4. Link para Terceiro"}</h2>
+    <p>{t.p4}</p>
 
-    <h2>5. Segurança e Contato</h2>
-    <p>
-      O site não comercializa ou compartilha dados com terceiros. Caso ocorra contato por e-mail ou formulário para sugestão ou dúvida, o dado será usado exclusivamente para responder à solicitação e será excluído após o atendimento.
-    </p>
+    <h2>{t.h2_security || "5. Segurança e Contato"}</h2>
+    <p>{t.p5}</p>
 
-    <h2>6. Consentimento</h2>
-    <p>
-      Ao utilizar o EloBetter, o usuário concorda com a prática descrita nesta página. Esta política pode ser atualizada ocasionalmente para refletir melhoria no guia.
-    </p>
+    <h2>{t.h2_consent || "6. Consentimento"}</h2>
+    <p>{t.p6}</p>
+    
     <hr>
     <p>
-      <strong>Última atualização:</strong> 5 de Julho de 2026.
+      <strong>{t.last_update || "Última atualização:"}</strong> {t.date || "5 de Julho de 2026."}
     </p>
   </section>
 </BaseLayout>

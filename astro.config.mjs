@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://elobetter.pages.dev',  
+  site: 'https://elobetter.com', 
   trailingSlash: 'never',
   prefetch: false,
   output: 'static',
