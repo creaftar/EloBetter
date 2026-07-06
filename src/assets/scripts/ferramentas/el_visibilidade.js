@@ -72,7 +72,6 @@ export function RemoverElementosVisiveis(){
  * @returns bool
  */
 export function VerificarVisibilidade(elemento){
-    //console.log("Classes no momento real:", elemento.className); 
     return elemento.classList.contains("elemento-visivel");
 }
 
@@ -81,7 +80,6 @@ export function VerificarVisibilidade(elemento){
  * @param {HTMLBodyElement} elemento 
  */
 export function AlternarVisibilidade(elemento, pode_fecharAoClicarFora = true){
-    //console.log(elemento);
     if(!VerificarVisibilidade(elemento)){
 		AdicionarVisibilidade(elemento, pode_fecharAoClicarFora);
 	}
