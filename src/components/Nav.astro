@@ -8,7 +8,7 @@ lang = lang === "PT" ? "PT" : lang.split("-")[0].toUpperCase();
 ---
 
 <nav id="navegacao">
-    <a id="logo" href={`/${Astro.currentLocale || ''}`}>
+    <a id="logo" href={`/${Astro.currentLocale + '/' || ''}`}>
         <?xml version="1.0" encoding="UTF-8" standalone="no"?>
         <svg
         version="1.1"
@@ -77,27 +77,33 @@ lang = lang === "PT" ? "PT" : lang.split("-")[0].toUpperCase();
             const idiomaAtual = Astro.currentLocale;
             let caminhoSemIdioma = pathname;
             
+            // Remove o idioma atual da URL para recalcular
             if (idiomaAtual && pathname.startsWith(`/${idiomaAtual}`)) {
-            caminhoSemIdioma = pathname.replace(`/${idiomaAtual}`, "");
+                caminhoSemIdioma = pathname.replace(`/${idiomaAtual}`, "");
             }
 
-            if (caminhoSemIdioma === "") caminhoSemIdioma = "/";
+            // Garante que o caminho base comece com uma barra
+            if (!caminhoSemIdioma.startsWith("/")) {
+                caminhoSemIdioma = "/" + caminhoSemIdioma;
+            }
 
+            // Monta o novo href dependendo se é o idioma padrão (en-us) ou não
             const novoHref = idioma.code === "en-us" 
-            ? `${caminhoSemIdioma}` 
-            : `/${idioma.code}${caminhoSemIdioma}`;
+                ? `${caminhoSemIdioma}` 
+                : `/${idioma.code}${caminhoSemIdioma}`;
 
-            // 1. Remove barras duplicadas (ex: //legal -> /legal)
-            // 2. Remove a barra do final (ex: /ru-ru/ -> /ru-ru)
-            const hrefFinal = novoHref.replace(/\/+/g, "/").replace(/\/$/, "");
+            // 1. Limpa barras duplicadas (ex: //legal/ -> /legal/)
+            let hrefFinal = novoHref.replace(/\/+/g, "/");
             
-            // Se o resultado for totalmente vazio (ex: na home do idioma padrão), vira "/"
-            const hrefPronto = hrefFinal === "" ? "/" : hrefFinal;
+            // 2. Garante a barra no final, a menos que já termine com ela
+            if (!hrefFinal.endsWith("/")) {
+                hrefFinal += "/";
+            }
 
             return (
             <li>
                 <a 
-                href={hrefPronto} 
+                href={hrefFinal} 
                 class:list={[
                     'menu-link', 
                     { 'idioma-ativo': Astro.currentLocale === idioma.code }

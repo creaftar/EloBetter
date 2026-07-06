@@ -3,7 +3,7 @@ import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
   site: 'https://elobetter.com', 
-  trailingSlash: 'never',
+  trailingSlash: 'always',
   prefetch: false,
   output: 'static',
   i18n: {
