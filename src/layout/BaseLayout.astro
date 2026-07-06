@@ -54,11 +54,11 @@ const urlDefaultX = getAbsoluteLocaleUrl('en-us', subCaminhoLimpo).replace(/\/$/
         <meta name="keywords" content={keywords} />
         <meta name="robots" content="index, follow" />
 
-        <link rel="canonical" href={urlCanonica} />
+        <link rel="canonical" href={urlCanonica == urlSite ? urlSite : urlCanonica + '/'} />
 
         {todosOsIdiomas.map((idioma) => {
             const urlTraduzida = getAbsoluteLocaleUrl(idioma, subCaminhoLimpo).replace(/\/$/, "");
-            return <link rel="alternate" hreflang={idioma} href={urlTraduzida} />;
+            return <link rel="alternate" hreflang={idioma} href={urlTraduzida == urlSite ? urlSite : urlTraduzida + '/'} />;
         })}
 
         <link rel="alternate" hreflang="x-default" href={urlDefaultX} />
