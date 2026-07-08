@@ -1,6 +1,32 @@
 .footer-principal{
     padding: 30px;
 }
+.container-share-icons{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    font-size: small;
+    user-select: none;
+    margin: 0 0 30px 0;
+}
+.square-share-icon{
+    background-color: rgba(30, 33, 39, 1);
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+}
+.square-share-icon a{
+    color: rgba(235, 235, 235, 1);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: medium;
+}
 .container-copyright-footer{
     opacity: 0.7;
     display: flex;
@@ -10,6 +36,7 @@
     user-select: none;
 }
 .lista-footer{
+    font-weight: bold;
     margin: 30px 0;
     display: flex;
     width: 100%;
@@ -17,7 +44,6 @@
     justify-content: center;
     flex-wrap: wrap;
     list-style: none;
-    font-weight: bold;
 }
 
 .lista-footer li{
@@ -32,4 +58,27 @@
 
 .lista-footer li:hover{
     background: linear-gradient(rgba(33, 36, 42, 1), rgba(30, 33, 39, 1));
+}
+
+.fa-x-twitter:before {
+    content: "\e61b"
+}
+.fa-facebook-f:before {
+    content: "\f39e"
+}
+.fa-reddit-alien:before {
+    content: "\f281"
+}
+.fa-bluesky:before {
+    content: "\e671"
+}
+.fa-whatsapp:before {
+    content: "\f232"
+}
+.fa-telegram:before,
+.fa-telegram-plane:before {
+    content: "\f2c6"
+}
+.fa-paper-plane:before {
+    content: "\f1d8"
 }

@@ -40,7 +40,8 @@ h3{
 }
 
 .destaque{
-    color: #faad8e;
+	font-weight: bold;
+    /*color: #faad8e;*/
 }
 
 .italico{

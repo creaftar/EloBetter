@@ -10,7 +10,7 @@
 #mentalidade{
     padding: 36px 12px 12px 12px;
     align-self: center;
-    border-bottom: dashed 5px wheat;
+    border-bottom: dashed 5px rgba(200, 200, 200, 0.7);;
 }
 .container-destaque{
     width: 100%;
@@ -70,7 +70,7 @@
 }
 
 .card-mentalidade.mentalidade-ativa > span{
-    border: dashed 2px rgba(245, 222, 179, 0.6);
+    border: dashed 2px rgba(200, 200, 200, 0.7);
 }
 .card-mentalidade.mentalidade-ativa:hover{
     border-bottom: solid 9px rgba(20, 20, 20);
