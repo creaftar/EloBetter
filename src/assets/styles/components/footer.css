@@ -13,16 +13,23 @@
     margin: 0 0 30px 0;
 }
 .square-share-icon{
-    background-color: rgba(30, 33, 39, 1);
+    background-color: rgba(var(--fundo-alternativo), 1);
     width: 36px;
     height: 36px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.1s;
+}
+.square-share-icon:hover{
+    background-color: rgba(var(--square-share-hover), 1);
+}
+.square-share-icon a{
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 3px;
-}
-.square-share-icon a{
-    color: rgba(235, 235, 235, 1);
+    width: 100%;
+    height: 100%;
+    color: rgba(var(--padrao), 1);
     text-decoration: none;
     font-weight: bold;
     font-size: medium;
@@ -34,6 +41,9 @@
     align-items: center;
     font-size: small;
     user-select: none;
+}
+.footer-apagado{
+    fill: rgba(var(--destaque), 1);
 }
 .lista-footer{
     font-weight: bold;
@@ -52,12 +62,12 @@
     border-radius: 6px;
 }
 .lista-footer > li a{
-    color: rgba(235,235,235, 1);
+    color: rgba(var(--padrao), 1);
     text-decoration: none;
 }
 
 .lista-footer li:hover{
-    background: linear-gradient(rgba(33, 36, 42, 1), rgba(30, 33, 39, 1));
+    background: linear-gradient(rgba(var(--li-footer-hover), 1), rgba(var(--fundo-alternativo), 1));
 }
 
 .fa-x-twitter:before {

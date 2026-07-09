@@ -9,6 +9,9 @@
   padding: 30px 9px;
   height: calc(fit-content + 300px);
 }
+.texto-trinta{
+  padding: 12px 9px;
+}
 
 .container-buttons-trintaquarenta{
   width: 100%;
@@ -25,8 +28,8 @@
   max-width: 600px;
   margin: 50px auto;
   padding-bottom: 20px;
-  border-left: 2px solid rgba(255, 255, 255, 0.1);
-  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  border-left: 2px solid rgba(var(--padrao-apagado), 0.1);
+  border-bottom: 1px solid rgba(var(--padrao-apagado), 0.1);
 }
 
 .coluna-wrapper {
@@ -40,7 +43,7 @@
 .coluna-porcentagem {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #ffffff;
+  color: var(--padrao);
   margin-bottom: 8px;
   transition: color 0.3s ease;
 }
@@ -52,25 +55,24 @@
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   transform-origin: bottom;
 }
-
 .barra-derrotas {
-  background: linear-gradient(to top, #2b1a1a, #4a2828);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  background: var(--bg-derrotas);
+  box-shadow: inset 0 1px 0 rgba(var(--padrao), 0.1);
 }
 
 .barra-vitorias {
-  background: linear-gradient(to top, #142233, #223954);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  background: var(--bg-vitorias);
+  box-shadow: inset 0 1px 0 rgba(var(--padrao), 0.1);
 }
 
 .barra-impacto {
-  background: linear-gradient(to top, #8a6623, #c89b3c);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  background: var(--bg-impacto);
+  box-shadow: inset 0 1px 0 rgba(var(--padrao), 0.2);
 }
 
 .coluna-label {
   font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(var(--padrao), 0.6);
   text-transform: uppercase;
   margin-top: 12px;
   text-align: center;
@@ -95,7 +97,7 @@
 }
 
 .coluna-wrapper:hover .coluna-porcentagem {
-  color: #c89b3c;
+  color: rgba(var(--destaque), 1);
 }
 
 @media screen and (max-width: 1359px){

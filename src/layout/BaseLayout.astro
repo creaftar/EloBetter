@@ -40,11 +40,21 @@ const urlSite = "https://elobetter.com";
 // 4. Gera as URLs absolutas corretas sem barras no final
 const urlCanonica = getAbsoluteLocaleUrl(idiomaAtual, subCaminhoLimpo).replace(/\/$/, "");
 const urlDefaultX = getAbsoluteLocaleUrl('en-us', subCaminhoLimpo).replace(/\/$/, "");
+
+import fs from 'node:fs';
+import path from 'node:path';
+
+const scriptPath = path.resolve('./src/assets/scripts/tema.js');
+const estiloPath = path.resolve('./src/assets/styles/tema.css');
+
+const scriptCritico = fs.readFileSync(scriptPath, 'utf-8');
+const estiloCritico = fs.readFileSync(estiloPath, 'utf-8');
 ---
 
 <!DOCTYPE html>
 <html lang={idiomaAtual}>
     <head>
+        
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
@@ -80,6 +90,10 @@ const urlDefaultX = getAbsoluteLocaleUrl('en-us', subCaminhoLimpo).replace(/\/$/
 
         <meta name="yandex-verification" content="1050a66f9dcb444c" />
         <meta name="google-adsense-account" content="ca-pub-3201959726673479">
+
+        <style is:inline set:html={estiloCritico} />
+        <script is:inline set:html={scriptCritico} />
+
         <script type="text/javascript">
             (function(c,l,a,r,i,t,y){
                 c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};

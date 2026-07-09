@@ -19,7 +19,7 @@ body{
 }
 .next-step{
 	font-family: "titulo", Bahnschrift, Cascadia Code, Courier New, Bazooka, CG Times, AvantGard Md BT, Moderna, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	color: rgb(241, 243, 245);
+	color: rgba(var(--padrao), 1);
 }
 	
 
@@ -41,10 +41,15 @@ h3{
 
 .destaque{
 	font-weight: bold;
-    /*color: #faad8e;*/
+    color: rgba(var(--destaque), 1);
 }
 
 .italico{
 	font-style: italic;
 	font-size: 0.9em;
+}
+
+.padrao{
+    fill: rgba(var(--padrao), 1);
+	color: rgba(var(--padrao), 1)
 }

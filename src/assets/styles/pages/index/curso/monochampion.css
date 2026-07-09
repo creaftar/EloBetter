@@ -8,18 +8,14 @@
     position: relative;
     isolation: isolate;
     padding: 30px 0 0 0;
-
     background-image: 
-        url('/assets/imgs/background/onda.svg'),
-        linear-gradient(to bottom, rgba(15, 15, 15, 0.45) 0%, transparent 30px),
-        linear-gradient(rgba(30, 33, 39, 1), rgba(30, 33, 39, 0.9));
-
-    /* PASSO 2: Definimos o comportamento de cada uma das 3 camadas */
+        var(--svg-onda),
+        linear-gradient(to bottom, rgba(var(--fundo), 0.45) 0%, transparent 30px),
+        linear-gradient(rgba(var(--fundo-alternativo), 1), rgba(var(--fundo-alternativo), 0.9));
     background-repeat: repeat-x, no-repeat, no-repeat;
     background-position: 0 top, top center, center;
     background-size: auto 15px, 100% 40px, 100% 100%;
-
-    /* Aplica a animação direto aqui */
+    will-change: transform;
     animation: moverOnda 150s linear infinite;
 }
 .container-conteudo{
@@ -33,6 +29,9 @@
 #truedamage-bg{
     height: 100%;
     max-width: 100%;
+}
+#img-monochampions{
+    fill: rgba(var(--fundo), 1);
 }
 
 .li-monochampion{
