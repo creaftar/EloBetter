@@ -8,6 +8,7 @@ import chatConfig from "@/assets/imgs/prints/chat_config.png";
 const { lang = "pt-br" } = Astro.props;
 
 const t = await import(`../../../i18n/pages/index/curso/mentalidade/${lang}.json`).then(m => m.default);
+const tc = await import(`../../../i18n/pages/index/curso/curso/${lang}.json`).then(m => m.default);
 ---
 
 <div class="container-mentalidade" 
@@ -47,7 +48,11 @@ const t = await import(`../../../i18n/pages/index/curso/mentalidade/${lang}.json
         />
         <p id="aviso-img-mentalidade" set:html={t.img_subtext || "Mantenha essa configuração acima (certifique-se de também marcar a caixa de emotes)"}></p>
     </div>
-    <button id="reset-step-mentalidade" class="next-step ns-alternativo"><i class="fa-solid fa-rotate-left"></i></button>
+    
+        <div class="container-buttons-mentalidade">
+            <button id="next-step-mentalidade" class="next-step ns-alternativo">{tc.btn_next || "PRÓXIMO PASSO"}</button>
+            <button id="reset-step-mentalidade" class="reset-step ns-alternativo"><i class="fa-solid fa-rotate-left"></i></button>
+        </div>
 </div>
 
 <script>

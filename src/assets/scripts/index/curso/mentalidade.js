@@ -8,6 +8,7 @@ const t = container && container.dataset.translations
 const textos = [...t];
 
 const quadrados = document.querySelectorAll(".quadrado-mentalidade");
+const nextBtn = document.getElementById("next-step-mentalidade");
 const resetBtn = document.getElementById("reset-step-mentalidade");
 
 let _estaDigitando = false; 
@@ -118,3 +119,7 @@ function CarregarProgressoSalvo() {
         }
     }
 }
+
+nextBtn.addEventListener("click", ()=>{
+    ProximaSecao("quantidadexqualidade");
+});
