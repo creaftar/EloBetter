@@ -6,10 +6,9 @@
     align-items: center;
     position: relative;
     padding: 30px 0 0 0;
-    background:
-    linear-gradient(to bottom, rgba(var(--fundo), 0.45) 0%, transparent 30px),
-    linear-gradient(rgba(var(--fundo-alternativo), 1), rgba(var(--fundo-alternativo), 0.9));
+    background: linear-gradient(180deg, rgba(var(--fundo), 1), rgba(var(--fundo-alternativo), 0.1));
     padding: 30px 9px;
+    
 }
 .subtitulo-qtde{
     font-weight: normal;
@@ -90,7 +89,7 @@
     gap: 6px;
     padding: 12px;
     transition: color 0.2s;
-    background-color: rgba(var(--fundo), 1);
+    background-color: rgba(var(--fundo-alternativo), 1);
     border-left: 4px solid rgba(var(--destaque), 0.1);
     width: 30%;
     transition: all 0.1s;
@@ -115,14 +114,14 @@
 .wrapperGrafico .item-legenda.focado {
     color: rgba(var(--destaque), 1);
     font-weight: bold;
-    background-color: rgba(var(--fundo), 1);
+    background-color: rgba(var(--fundo-alternativo), 1);
     border-left: 4px solid rgba(var(--destaque), 0.3);
 }
 
 /* Box de texto descritivo */
 .wrapperGrafico .detalhe-elo-box {
     padding: 15px;
-    background-color: rgba(var(--fundo), 1);
+    background-color: rgba(var(--fundo-alternativo), 1);
     border-left: 4px solid rgba(var(--destaque), 1);
     border-radius: 0 4px 4px 0;
     font-size: 13px;
