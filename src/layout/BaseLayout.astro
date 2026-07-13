@@ -105,9 +105,9 @@ const estiloCritico = fs.readFileSync(estiloPath, 'utf-8');
     </head>
     <body>
         <Nav lang={idiomaAtual} />
-        <div id="content-bl-body">
+        <main id="content-bl-body">
           <slot></slot>
-        </div>
+        </main>
         <Footer lang={idiomaAtual} />
     </body>
 </html>

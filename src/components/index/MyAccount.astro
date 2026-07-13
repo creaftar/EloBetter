@@ -9,11 +9,14 @@ const { lang } = Astro.props;
 const t = await import(`../../i18n/pages/index/myaccount/${lang}.json`).then(m => m.default);
 ---
 
-<div 
+<section 
   class="container-account" 
   data-lang={lang}
   data-translations={JSON.stringify(t)}
   id="myaccount"
+  aria-live="polite"
+  itemscope 
+  itemtype="https://schema.org/Person"
 >
   <div id="container-perfil-infos">
     <div id="container-img-nivel">
@@ -38,6 +41,7 @@ const t = await import(`../../i18n/pages/index/myaccount/${lang}.json`).then(m =
           id="elo-perfil" 
           width="80px"
           height="80px"
+          alt="Emblema do elo atual do autor do guia"
         />
         <div>
           <div class="linha">
@@ -55,7 +59,7 @@ const t = await import(`../../i18n/pages/index/myaccount/${lang}.json`).then(m =
       <p id="atualizacao-perfil"></p>
     </div>
   </div>
-</div>
+</section>
 
 <script>
   import '@/assets/scripts/index/account/interface.js';

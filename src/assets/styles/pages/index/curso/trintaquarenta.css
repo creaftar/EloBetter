@@ -76,9 +76,9 @@
 
 .coluna-label {
   font-size: 0.8rem;
-  color: rgba(var(--padrao), 0.6);
+  color: rgba(var(--padrao), 0.9);
   text-transform: uppercase;
-  margin-top: 12px;
+  margin-top: 9px;
   text-align: center;
   white-space: nowrap;
 }

@@ -72,21 +72,23 @@ const prefixoIdioma = (idiomaAtual && idiomaAtual !== 'en-us') ? `/${idiomaAtual
         </div>
         © 2026 - {new Date().getFullYear()} | EloBetter - {t.rights_reserved}
     </div>
-    <ul class="lista-footer">
-        <li>
-            <a href={`${prefixoIdioma}/legal/about/`} target="_blank">
-                {t.link_about}
-            </a>
-        </li>
-        <li>
-            <a href={`${prefixoIdioma}/legal/privacy/`} target="_blank">
-                {t.link_privacy}
-            </a>
-        </li>
-        <li>
-            <a href={`${prefixoIdioma}/legal/terms/`} target="_blank">
-                {t.link_terms}
-            </a>
-        </li>
-    </ul>
+    <nav>
+        <ul class="lista-footer">
+            <li>
+                <a href={`${prefixoIdioma}/legal/about/`} target="_blank">
+                    {t.link_about}
+                </a>
+            </li>
+            <li>
+                <a href={`${prefixoIdioma}/legal/privacy/`} target="_blank">
+                    {t.link_privacy}
+                </a>
+            </li>
+            <li>
+                <a href={`${prefixoIdioma}/legal/terms/`} target="_blank">
+                    {t.link_terms}
+                </a>
+            </li>
+        </ul>
+    </nav>
 </footer>
