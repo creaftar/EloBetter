@@ -1,12 +1,18 @@
 .container-mentalidade {
     display: flex;
     flex-direction: column;
+
     background:
+    var(--coruja), var(--moldura),
     linear-gradient(to bottom, rgba(var(--fundo), 0.45) 0%, transparent 30px),
-    linear-gradient(rgba(var(--fundo-alternativo), 1), rgba(var(--fundo-alternativo), 0.9));
+    linear-gradient(rgba(var(--fundo-alternativo), 1), rgba(var(--fundo-alternativo), 0.7));
+    background-repeat: no-repeat;
+    background-position: left top, right bottom; /* Esquerda topo, Direita base */
+    object-fit: cover;
     /*background-color:  rgba(var(--fundo), 1);*/
     padding: 24px;
     box-shadow: inset 0px 0px 40px rgba(var(--fumaca), 0.3);
+    z-index: -1;
 }
 #mentalidade{
     padding: 36px 12px 12px 12px;
@@ -93,7 +99,7 @@
 }
 
 #aviso-mentalidade{
-    background-color: rgb(var(--fundo-alternativo));
+    background-color: rgb(var(--fundo));
     padding: 12px;
     text-align: center;
     font-weight: bold;

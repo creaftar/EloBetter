@@ -13,6 +13,10 @@
   padding: 12px 9px;
 }
 
+.container-textos-trinta{
+  order: 1;
+}
+
 .container-buttons-trintaquarenta{
   width: 100%;
   display: flex;
@@ -103,6 +107,9 @@
 @media screen and (max-width: 1359px){
   .container-trinta-quarenta{
     flex-direction: column;
+  }
+  .container-textos-trinta{
+    order: 0;
   }
 }
 @media screen and (max-width: 500px){

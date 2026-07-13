@@ -6,7 +6,7 @@
     align-items: center;
     position: relative;
     padding: 30px 0 0 0;
-    background: linear-gradient(180deg, rgba(var(--fundo), 1), rgba(var(--fundo-alternativo), 0.1));
+    background: linear-gradient(180deg, rgba(var(--fundo-alternativo), 0.1), rgba(var(--fundo), 1));
     padding: 30px 9px;
     
 }
