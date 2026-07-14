@@ -1,7 +1,7 @@
 ---
 import "@/assets/styles/components/footer.css"
 
-const { lang = "pt-br" } = Astro.props;
+const { lang = "en-us" } = Astro.props;
 
 const t = await import(`../i18n/components/footer/${lang}.json`).then(m => m.default);
 const tc = await import(`../i18n/pages/index/curso/curso/${lang}.json`).then(m => m.default);

@@ -14,13 +14,13 @@ interface Props {
   lang?: string;
 }
 
-const idiomaAtual = Astro.currentLocale || "pt-br";
+const idiomaAtual = Astro.currentLocale || "en-us";
 
 const { 
   title = "EloBetter - Aprenda a Subir de Elo no League of Legends", 
   description = "Cansado de trolls, afk's e smurfs? Aprenda a subir de elo de verdade com este guia extremamente compacto, sem enrolações.", 
   keywords = "elo, league of legends, como subir de elo no lol, como sair do prata",
-  lang="pt-br"
+  lang="en-us"
 } = Astro.props as Props;
 
 // 1. Array exato com os códigos dos idiomas suportados pelo seu site

@@ -2,7 +2,7 @@
 import "@/assets/styles/pages/index/curso/trintaquarenta.css";
 import "@/assets/styles/pages/index/curso/curso.css";
 
-const { lang = "pt-br" } = Astro.props;
+const { lang = "en-us" } = Astro.props;
 
 const t = await import(`../../../i18n/pages/index/curso/trintaquarenta/${lang}.json`).then(m => m.default);
 ---

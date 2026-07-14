@@ -5,11 +5,12 @@ import "@/assets/styles/components/nav/tema.css";
 
 let { lang = "PT" } = Astro.props;
 
+const langOriginal = lang;
 lang = lang === "PT" ? "PT" : lang.split("-")[0].toUpperCase();
 ---
 
 <nav id="navegacao">
-    <a id="logo" href={`/${Astro.currentLocale + '/' || ''}`}>
+    <a id="logo" href={`/${langOriginal === "en-us" ? '' : langOriginal + '/'}`}>
         <?xml version="1.0" encoding="UTF-8" standalone="no"?>
         <svg
         version="1.1"

@@ -12,7 +12,6 @@ import "@/assets/styles/pages/index/index.css";
 export async function getStaticPaths() {
   return [
     { params: { lang: undefined } }, // 24 linguas, sem contar o undefined
-    { params: { lang: 'en-us' } },
     { params: { lang: 'en-gb' } },
     { params: { lang: 'en-au' } },
     { params: { lang: 'pt-br' } },
@@ -77,10 +76,10 @@ const locales = {
 
 // Captura e definição da linguagem atual
 const { lang: paramLang } = Astro.params;
-const lang = paramLang || Astro.currentLocale || 'pt-br';
+const lang = paramLang || Astro.currentLocale || 'en-us';
 
 // Fallback seguro caso a linguagem não exista no objeto de locales
-const d = locales[lang as keyof typeof locales] || locales["pt-br"];
+const d = locales[lang as keyof typeof locales] || locales["en-us"];
 ---
 
 <BaseLayout

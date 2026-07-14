@@ -1,7 +1,7 @@
 ---
 import "@/assets/styles/pages/index/conclusao.css";
 
-const { lang = "pt-br" } = Astro.props;
+const { lang = "en-us" } = Astro.props;
 
 const t = await import(`../../i18n/pages/index/conclusao/${lang}.json`).then(m => m.default);
 ---
