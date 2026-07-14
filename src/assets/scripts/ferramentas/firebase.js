@@ -1,5 +1,5 @@
 import { initializeApp } from "firebase/app";
-import { initializeFirestore } from "firebase/firestore";
+import { getFirestore } from "firebase/firestore/lite";
 
 const firebaseConfig = {
   apiKey: "AIzaSyC3S_v3XTrwKrAAQyHt4DFZ1Hz3LdLoUfk",
@@ -11,9 +11,4 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-export const db = initializeFirestore(app, {
-  // Desativa a tentativa automática de manter túneis abertos de longa duração
-  experimentalAutoDetectLongPolling: false,
-  // Garante que requisições HTTP REST convencionais sejam priorizadas
-  useFetchStreams: false 
-});
+export const db = getFirestore(app);

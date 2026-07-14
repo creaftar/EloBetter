@@ -1,5 +1,5 @@
 import { db } from "../../ferramentas/firebase";
-import { setDoc, doc, getDoc } from "firebase/firestore";
+import { setDoc, doc, getDoc } from "firebase/firestore/lite";
 
 export let latestVersion = "16.13.1"; // Versão padrão inicial (fallback)
 

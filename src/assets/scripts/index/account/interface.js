@@ -100,7 +100,7 @@ function AtualizarRank(ranking){
 function GerarImg(){
     const imgDOM = document.createElement("img");
     imgDOM.id = "perfil-img";
-    imgDOM.alt = tc;
+    imgDOM.alt = tc.summoner_icon;
     imgDOM.width = 120; // Definido como número
     imgDOM.height = 120; // Definido como número
     imgDOM.loading = "eager";
@@ -211,6 +211,7 @@ function GerarImgElo(ranking) {
     imgDOM.width = 80;
     imgDOM.height = 80;
     imgDOM.loading = "eager";
+    imgDOM.alt= tc.badge_current_elo;
 
     let urlOriginal = "";
     if (!ranking || ranking === "unranked") {

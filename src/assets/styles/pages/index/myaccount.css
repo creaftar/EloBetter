@@ -28,6 +28,10 @@
     width: 80px;
     height: 80px;
 }
+#elo-perfil img{
+    width: 100%;
+    height: 100%;
+}
 
 #elo-perfil:empty{
     width: 80px;
