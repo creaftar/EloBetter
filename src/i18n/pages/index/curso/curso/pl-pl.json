@@ -16,5 +16,8 @@
   "myaccount": {
     "badge_current_elo": "Godło obecnego ELO autora poradnika",
     "summoner_icon": "Ikona Przywoływacza"
-  }
+  },
+  "reset_steps": "Zresetuj wszystkie kroki (zacznij od nowa)",
+  "copy_profile_nick": "Skopiuj nazwę przywoływacza z profilu",
+  "update_profile": "Aktualizuj profil"
 }

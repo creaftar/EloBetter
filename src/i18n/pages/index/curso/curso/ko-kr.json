@@ -16,5 +16,8 @@
   "myaccount": {
     "badge_current_elo": "가이드 제작자의 현재 티어 엠블럼",
     "summoner_icon": "소환사 아이콘"
-  }
+  },
+  "reset_steps": "모든 단계 초기화 (처음부터 다시 시작)",
+  "copy_profile_nick": "프로필 닉네임 복사",
+  "update_profile": "프로필 업데이트"
 }

@@ -16,5 +16,8 @@
   "myaccount": {
     "badge_current_elo": "Rehber yazarının mevcut ELO amblemi",
     "summoner_icon": "Sihirdar Simgesi"
-  }
+  },
+  "reset_steps": "Tüm adımları sıfırla (yeniden başla)",
+  "copy_profile_nick": "Profil oyuncu adını kopyala",
+  "update_profile": "Profili güncelle"
 }

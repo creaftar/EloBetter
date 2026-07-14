@@ -16,5 +16,8 @@
   "myaccount": {
     "badge_current_elo": "Emblema ELO-ului actual al autorului ghidului",
     "summoner_icon": "Pictogramă invocator"
-  }
+  },
+  "reset_steps": "Resetează toți pașii (ia-o de la capăt)",
+  "copy_profile_nick": "Copiază numele de invocator din profil",
+  "update_profile": "Actualizează profilul"
 }

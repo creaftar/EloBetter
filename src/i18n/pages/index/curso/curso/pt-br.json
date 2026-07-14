@@ -16,5 +16,8 @@
   "myaccount": {
     "badge_current_elo": "Emblema do elo atual do autor do guia",
     "summoner_icon": "Ícone de Invocador"
-  }
+  },
+  "reset_steps": "Resetar todos os passos (começar novamente)",
+  "copy_profile_nick": "Copiar o nick do perfil",
+  "update_profile": "Atualizar o perfil"
 }

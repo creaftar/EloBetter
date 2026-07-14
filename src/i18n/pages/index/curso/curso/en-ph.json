@@ -16,5 +16,8 @@
   "myaccount": {
     "badge_current_elo": "Guide creator's current ELO emblem",
     "summoner_icon": "Summoner Icon"
-  }
+  },
+  "reset_steps": "Reset all steps (start over)",
+  "copy_profile_nick": "Copy profile IGN",
+  "update_profile": "Update profile"
 }

@@ -16,5 +16,8 @@
   "myaccount": {
     "badge_current_elo": "攻略作者當前 ELO 的徽章",
     "summoner_icon": "召喚師頭像"
-  }
+  },
+  "reset_steps": "重設所有步驟（重新開始）",
+  "copy_profile_nick": "複製個人檔案的召喚師名稱",
+  "update_profile": "更新個人檔案"
 }

@@ -94,7 +94,6 @@ function AtualizarRank(ranking){
 function GerarImg(){
     const imgDOM = document.createElement("img");
     imgDOM.id = "perfil-img";
-    console.log(tc);
     imgDOM.alt = tc;
     imgDOM.width = "120"; 
     imgDOM.height = "120"; 

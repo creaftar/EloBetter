@@ -30,10 +30,10 @@ const tc = await import(`../../i18n/pages/index/curso/curso/${lang}.json`).then(
         <p id="nickname" class="skeleton-text"></p>
         <span id="tag-br1" class="skeleton-text"></span>
         <div class="container-perfil-button">
-          <button id="copiar-perfil" class="perfil-button">
+          <button id="copiar-perfil" class="perfil-button" aria-label={tc.copy_profile_nick}>
             <i class="fa-regular fa-copy"></i>
           </button>
-          <button id="atualizar-perfil" class="perfil-button disabled" disabled>
+          <button id="atualizar-perfil" class="perfil-button disabled" disabled aria-label={tc.update_profile}>
             <i class="fa-solid fa-arrows-rotate"></i>
           </button>
         </div>

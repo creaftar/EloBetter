@@ -16,5 +16,8 @@
   "myaccount": {
     "badge_current_elo": "Útmutató készítőjének jelenlegi ELO jelvénye",
     "summoner_icon": "Idéző ikon"
-  }
+  },
+  "reset_steps": "Összes lépés visszaállítása (kezdés elölről)",
+  "copy_profile_nick": "Profil idézőnevének másolása",
+  "update_profile": "Profil frissítése"
 }

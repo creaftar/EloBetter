@@ -16,5 +16,8 @@
   "myaccount": {
     "badge_current_elo": "Aktuelles ELO-Wappen des Guide-Autors",
     "summoner_icon": "Beschwörersymbol"
-  }
+  },
+  "reset_steps": "Alle Schritte zurücksetzen (neu starten)",
+  "copy_profile_nick": "Profil-Beschwörernamen kopieren",
+  "update_profile": "Profil aktualisieren"
 }

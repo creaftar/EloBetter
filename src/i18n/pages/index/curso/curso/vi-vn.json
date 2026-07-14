@@ -16,5 +16,8 @@
   "myaccount": {
     "badge_current_elo": "Biểu tượng ELO hiện tại của tác giả hướng dẫn",
     "summoner_icon": "Biểu tượng Anh hùng"
-  }
+  },
+  "reset_steps": "Đặt lại tất cả các bước (bắt đầu lại từ đầu)",
+  "copy_profile_nick": "Sao chép tên người chơi trong hồ sơ",
+  "update_profile": "Cập nhật hồ sơ"
 }

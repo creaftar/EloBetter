@@ -16,5 +16,8 @@
   "myaccount": {
     "badge_current_elo": "Znak aktuálního ELO autora průvodce",
     "summoner_icon": "Ikona vyvolávače"
-  }
+  },
+  "reset_steps": "Resetovat všechny kroky (začít znovu)",
+  "copy_profile_nick": "Zkopírovat jméno vyvolávače z profilu",
+  "update_profile": "Aktualizovat profil"
 }

@@ -16,5 +16,8 @@
   "myaccount": {
     "badge_current_elo": "Blason de l'ELO actuel de l'auteur du guide",
     "summoner_icon": "Icône d'invocateur"
-  }
+  },
+  "reset_steps": "Réinitialiser toutes les étapes (recommencer)",
+  "copy_profile_nick": "Copier le nom d'invocateur du profil",
+  "update_profile": "Mettre à jour le profil"
 }
