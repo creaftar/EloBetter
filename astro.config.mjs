@@ -39,6 +39,10 @@ export default defineConfig({
       host: true,
       port: 4321,
     },
+    build: {
+      // Limite exato de 13 KiB em bytes
+      assetsInlineLimit: 13312, 
+    }
   },
   integrations: [
     sitemap({

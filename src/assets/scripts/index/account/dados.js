@@ -3,7 +3,7 @@ import { setDoc, doc, getDoc } from "firebase/firestore";
 
 export let latestVersion = "16.13.1"; // Versão padrão inicial (fallback)
 
-async function carregarVersao() {
+export async function CarregarVersao() {
     try {
         const resVersion = await fetch("https://ddragon.leagueoflegends.com/api/versions.json");
         const versions = await resVersion.json();
@@ -12,7 +12,6 @@ async function carregarVersao() {
         console.error("Erro ao obter versão do DDragon:", e);
     }
 }
-carregarVersao();
 
 export let _lastUpdate;
 

@@ -1,4 +1,4 @@
-import { BuscarPerfil, latestVersion, AtualizarPerfil, _lastUpdate } from "./dados";
+import { BuscarPerfil, CarregarVersao, latestVersion, AtualizarPerfil, _lastUpdate } from "./dados";
 
 const imgEl = document.getElementById("container-img-perfil");
 const nivelEl = document.getElementById("perfil-nivel");
@@ -56,7 +56,9 @@ async function AtualizarInterface(botaoChamando = false){
 
     AtualizarRank(perfil.ranking[0]);
 
-    eloEl.src = ObterLinkElo(perfil.ranking[0].tier.toLowerCase());
+    const eloContainer = document.getElementById("elo-perfil");
+    eloContainer.innerHTML = "";
+    eloContainer.appendChild(GerarImgElo(perfil.ranking[0].tier.toLowerCase()));
     
     AtualizarTextoTempo();
     VerificarEstadoBotao();
@@ -99,10 +101,24 @@ function GerarImg(){
     const imgDOM = document.createElement("img");
     imgDOM.id = "perfil-img";
     imgDOM.alt = tc;
-    imgDOM.width = "120"; 
-    imgDOM.height = "120"; 
-    imgDOM.loading = "lazy";
-    imgDOM.src = `https://ddragon.leagueoflegends.com/cdn/${latestVersion}/img/profileicon/${perfil.iconeId}.png`;
+    imgDOM.width = 120; // Definido como número
+    imgDOM.height = 120; // Definido como número
+    imgDOM.loading = "eager";
+    
+    CarregarVersao();
+    const urlOriginal = `https://ddragon.leagueoflegends.com/cdn/${latestVersion}/img/profileicon/${perfil.iconeId}.png`;
+    
+    // Otimização máxima: Redimensiona para 120x120, converte para webp e qualidade 75
+    const urlOtimizada = `https://wsrv.nl/?url=${encodeURIComponent(urlOriginal)}&w=120&h=120&output=webp&q=75`;
+    
+    imgDOM.src = urlOtimizada;
+    
+    // Fallback de segurança: se o otimizador falhar, carrega o PNG original
+    imgDOM.onerror = () => {
+        imgDOM.onerror = null;
+        imgDOM.src = urlOriginal;
+    };
+    
     return imgDOM;
 }
 
@@ -189,13 +205,32 @@ function VerificarEstadoBotao(){
     }
 }
 
-function ObterLinkElo(ranking) {
+function GerarImgElo(ranking) {
+    const imgDOM = document.createElement("img");
+    imgDOM.id = "elo-perfil-img";
+    imgDOM.width = 80;
+    imgDOM.height = 80;
+    imgDOM.loading = "eager";
+
+    let urlOriginal = "";
     if (!ranking || ranking === "unranked") {
-        return "https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-shared-components/global/default/unranked.png"; 
+        urlOriginal = "https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-shared-components/global/default/unranked.png"; 
+    } else {
+        urlOriginal = `https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-shared-components/global/default/${ranking}.png`;
     }
-    
-    // URL padrão dos emblemas de elo do Community Dragon
-    return `https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-shared-components/global/default/${ranking}.png`;
+
+    const urlOtimizada = `https://wsrv.nl/?url=${encodeURIComponent(urlOriginal)}&w=80&h=80&output=webp&q=75`;
+
+    imgDOM.src = urlOtimizada;
+
+    // GARANTIA ABSOLUTA: Se o wsrv.nl falhar, carrega a imagem do Community Dragon
+    imgDOM.onerror = () => {
+        imgDOM.onerror = null;
+        imgDOM.src = urlOriginal;
+        console.warn("Fallback acionado para imagem de elo.");
+    };
+
+    return imgDOM;
 }
 
 AtualizarInterface();
