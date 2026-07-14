@@ -1,8 +1,20 @@
 {
-  "title": "Imparare con <span class=\"destaque\">UN</span> solo Campione",
-  "step_1": "Scopri solo <span class=\"destaque\">UN</span> campione e solo <span class=\"destaque\">UNA</span> corsia su cui concentrare i tuoi sforzi",
-  "step_2": "Una volta completato il passaggio precedente, guarderai video e/o streaming del personaggio scelto",
-  "step_3": "Durante lo streaming, concentrati sui consigli forniti dalla persona che stai guardando",
-  "step_4": "Prova ad applicare nelle tue partite ciò che hai imparato dagli streaming",
-  "btn_next": "PASSO SUCCESSIVO"
+  "btn_next": "PASSO SUCCESSIVO",
+  "footer": {
+    "share_telegram": "Condividi il sito su Telegram",
+    "share_whatsapp": "Condividi il sito su WhatsApp",
+    "share_bluesky": "Condividi il sito su Bluesky",
+    "share_x": "Condividi il sito su X",
+    "share_facebook": "Condividi il sito su Facebook",
+    "share_reddit": "Condividi il sito su Reddit"
+  },
+  "banner": {
+    "view_opgg": "Visualizza il profilo del creatore su OP.GG",
+    "play_crossword": "Gioca ai cruciverba di League of Legends",
+    "watch_videos": "Guarda video pratici e analizza come gioca un giocatore di High ELO"
+  },
+  "myaccount": {
+    "badge_current_elo": "Emblema dell'ELO attuale dell'autore della guida",
+    "summoner_icon": "Icona dell'evocatore"
+  }
 }

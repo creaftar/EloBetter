@@ -4,6 +4,7 @@ import "@/assets/styles/components/footer.css"
 const { lang = "pt-br" } = Astro.props;
 
 const t = await import(`../i18n/components/footer/${lang}.json`).then(m => m.default);
+const tc = await import(`../i18n/pages/index/curso/curso/${lang}.json`).then(m => m.default);
 
 const idiomaAtual = Astro.currentLocale;
 const prefixoIdioma = (idiomaAtual && idiomaAtual !== 'en-us') ? `/${idiomaAtual}` : '';
@@ -13,26 +14,32 @@ const prefixoIdioma = (idiomaAtual && idiomaAtual !== 'en-us') ? `/${idiomaAtual
     <div class="container-share-icons">
         <div class="square-share-icon">
             <a href="https://twitter.com/intent/tweet?url=https%3A%2F%2Felobetter.com%2F" 
+            aria-label={tc.footer.share_x}
             target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter"></i></a>
         </div>
         <div class="square-share-icon">
             <a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Felobetter.com%2F" 
+            aria-label={tc.footer.share_facebook}
             target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f"></i></a>
         </div>
         <div class="square-share-icon">
             <a href="https://www.reddit.com/submit?url=https%3A%2F%2Felobetter.com%2F" 
+            aria-label={tc.footer.share_reddit}
             target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-reddit-alien"></i></a>
         </div>
         <div class="square-share-icon">
             <a href="https://bsky.app/intent/compose?text=https%3A%2F%2Felobetter.com%2F" 
+            aria-label={tc.footer.share_bluesky}
             target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-bluesky"></i></a>
         </div>
         <div class="square-share-icon">
             <a href="https://api.whatsapp.com/send?text=Learn%20how%20to%20level%20up%20in%20LoL%3A%20https%3A%2F%2Felobetter.com%2F" 
+            aria-label={tc.footer.share_whatsapp}
             target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i></a>
         </div>
         <div class="square-share-icon">
             <a href="https://t.me/share/url?url=https%3A%2F%2Felobetter.com%2F&text=Learn%20how%20to%20level%20up%20in%20LoL" 
+            aria-label={tc.footer.share_telegram}
             target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-paper-plane"></i></a>
         </div>
     </div>
@@ -75,17 +82,17 @@ const prefixoIdioma = (idiomaAtual && idiomaAtual !== 'en-us') ? `/${idiomaAtual
     <nav>
         <ul class="lista-footer">
             <li>
-                <a href={`${prefixoIdioma}/legal/about/`} target="_blank">
+                <a href={`${prefixoIdioma}/legal/about/`} target="_blank" rel="noopener noreferrer">
                     {t.link_about}
                 </a>
             </li>
             <li>
-                <a href={`${prefixoIdioma}/legal/privacy/`} target="_blank">
+                <a href={`${prefixoIdioma}/legal/privacy/`} target="_blank" rel="noopener noreferrer">
                     {t.link_privacy}
                 </a>
             </li>
             <li>
-                <a href={`${prefixoIdioma}/legal/terms/`} target="_blank">
+                <a href={`${prefixoIdioma}/legal/terms/`} target="_blank" rel="noopener noreferrer">
                     {t.link_terms}
                 </a>
             </li>

@@ -1,8 +1,20 @@
 {
-  "title": "Učení s <span class=\"destaque\">JEDNÍM</span> Šampionem",
-  "step_1": "Najdi si pouze <span class=\"destaque\">JEDNOHO</span> šampiona a pouze <span class=\"destaque\">JEDNU</span> lajnu, na kterou zaměříš své úsilí",
-  "step_2": "Jakmile zvládneš předchozí krok, začneš sledovat videa a/nebo streamy vybrané postavy",
-  "step_3": "Při sledování streamů se zaměř na rady, které člověk, kterého sleduješ, předává",
-  "step_4": "Zkus aplikovat to, co ses naučil ze streamů, do svých vlastních her",
-  "btn_next": "DALŠÍ KROK"
+  "btn_next": "DALŠÍ KROK",
+  "footer": {
+    "share_telegram": "Sdílet web na Telegramu",
+    "share_whatsapp": "Sdílet web na WhatsAppu",
+    "share_bluesky": "Sdílet web na Bluesky",
+    "share_x": "Sdílet web na X",
+    "share_facebook": "Sdílet web na Facebooku",
+    "share_reddit": "Sdílet web na Redditu"
+  },
+  "banner": {
+    "view_opgg": "Zobrazit profil tvůrce na OP.GG",
+    "play_crossword": "Hrát křížovky z League of Legends",
+    "watch_videos": "Sleduj praktická videa a analyzuj, jak hraje High ELO hráč"
+  },
+  "myaccount": {
+    "badge_current_elo": "Znak aktuálního ELO autora průvodce",
+    "summoner_icon": "Ikona vyvolávače"
+  }
 }

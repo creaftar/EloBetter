@@ -1,8 +1,20 @@
 {
-  "title": "Mit <span class=\"destaque\">EINEM</span> Champion lernen",
-  "step_1": "Finde nur <span class=\"destaque\">EINEN</span> Champion und nur <span class=\"destaque\">EINE</span> Lane, auf die du deine Bemühungen konzentrierst",
-  "step_2": "Sobald der vorherige Schritt abgeschlossen ist, schaust du dir Videos und/oder Streams des ausgewählten Charakters an",
-  "step_3": "Achte beim Anschauen von Streams auf die Tipps, die der Streamer gibt",
-  "step_4": "Versuche, das Gelernte aus den Streams in deinen Spielen umzusetzen",
-  "btn_next": "NÄCHSTER SCHRITT"
+  "btn_next": "NÄCHSTER SCHRITT",
+  "footer": {
+    "share_telegram": "Website auf Telegram teilen",
+    "share_whatsapp": "Website auf WhatsApp teilen",
+    "share_bluesky": "Website auf Bluesky teilen",
+    "share_x": "Website auf X teilen",
+    "share_facebook": "Website auf Facebook teilen",
+    "share_reddit": "Website auf Reddit teilen"
+  },
+  "banner": {
+    "view_opgg": "Ersteller-Profil auf OP.GG ansehen",
+    "play_crossword": "League of Legends Kreuzworträtsel spielen",
+    "watch_videos": "Praktische Videos ansehen und analysieren, wie ein High-ELO-Spieler spielt"
+  },
+  "myaccount": {
+    "badge_current_elo": "Aktuelles ELO-Wappen des Guide-Autors",
+    "summoner_icon": "Beschwörersymbol"
+  }
 }

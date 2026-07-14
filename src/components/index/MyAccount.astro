@@ -7,12 +7,14 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = await import(`../../i18n/pages/index/myaccount/${lang}.json`).then(m => m.default);
+const tc = await import(`../../i18n/pages/index/curso/curso/${lang}.json`).then(m => m.default);
 ---
 
 <section 
   class="container-account" 
   data-lang={lang}
   data-translations={JSON.stringify(t)}
+  data-translationscurso={JSON.stringify(tc.myaccount.summoner_icon)}
   id="myaccount"
   aria-live="polite"
   itemscope 
@@ -41,7 +43,7 @@ const t = await import(`../../i18n/pages/index/myaccount/${lang}.json`).then(m =
           id="elo-perfil" 
           width="80px"
           height="80px"
-          alt="Emblema do elo atual do autor do guia"
+          alt={tc.myaccount.badge_current_elo}
         />
         <div>
           <div class="linha">

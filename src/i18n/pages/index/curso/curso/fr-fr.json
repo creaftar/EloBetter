@@ -1,8 +1,20 @@
 {
-  "title": "Apprendre avec <span class=\"destaque\">UN</span> seul Champion",
-  "step_1": "Trouvez <span class=\"destaque\">UN</span> seul champion et <span class=\"destaque\">UNE</span> seule voie sur lesquels concentrer vos efforts",
-  "step_2": "Une fois l'étape précédente terminée, vous regarderez des vidéos et/ou des streams du personnage choisi",
-  "step_3": "En regardant les streams, concentrez-vous auf les conseils donnés par la personne que vous suivez",
-  "step_4": "Essayez d'appliquer ce que vous avez appris des streams dans vos parties",
-  "btn_next": "ETAPE SUIVANTE"
+  "btn_next": "ETAPE SUIVANTE",
+  "footer": {
+    "share_telegram": "Partager le site sur Telegram",
+    "share_whatsapp": "Partager le site sur WhatsApp",
+    "share_bluesky": "Partager le site sur Bluesky",
+    "share_x": "Partager le site sur X",
+    "share_facebook": "Partager le site sur Facebook",
+    "share_reddit": "Partager le site sur Reddit"
+  },
+  "banner": {
+    "view_opgg": "Voir le profil du créateur sur OP.GG",
+    "play_crossword": "Jouer aux mots croisés League of Legends",
+    "watch_videos": "Regarder des vidéos de gameplay et analyser comment joue un joueur High ELO"
+  },
+  "myaccount": {
+    "badge_current_elo": "Blason de l'ELO actuel de l'auteur du guide",
+    "summoner_icon": "Icône d'invocateur"
+  }
 }

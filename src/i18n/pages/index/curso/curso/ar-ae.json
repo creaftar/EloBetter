@@ -1,8 +1,20 @@
 {
-  "title": "التعلم باستخدام بطل <span class=\"destaque\">واحد</span>",
-  "step_1": "اكتشف بطلاً <span class=\"destaque\">واحداً</span> فقط ومساراً <span class=\"destaque\">واحداً</span> فقط لتركيز جهودك عليه",
-  "step_2": "بمجرد الانتهاء من الخطوة السابقة، ستشاهد مقاطع فيديو و/أو بث مباشر للشخصية المختارة",
-  "step_3": "عند مشاهدة البث المباشر، ركز على النصائح التي يقدمها الشخص الذي تشاهده",
-  "step_4": "حاول تطبيق ما تعلمته من البث المباشر في مبارياتك الخاصة",
-  "btn_next": "الخطوة التالية"
+  "btn_next": "الخطوة التالية",
+  "footer": {
+    "share_telegram": "مشاركة الموقع على Telegram",
+    "share_whatsapp": "مشاركة الموقع على WhatsApp",
+    "share_bluesky": "مشاركة الموقع على Bluesky",
+    "share_x": "مشاركة الموقع على X",
+    "share_facebook": "مشاركة الموقع على Facebook",
+    "share_reddit": "مشاركة الموقع على Reddit"
+  },
+  "banner": {
+    "view_opgg": "عرض ملف المنشئ الشخصي على OP.GG",
+    "play_crossword": "لعب الكلمات المتقاطعة الخاصة بـ League of Legends",
+    "watch_videos": "شاهد فيديوهات عملية وحلل طريقة لعب لاعب High ELO"
+  },
+  "myaccount": {
+    "badge_current_elo": "شعار الـ ELO الحالي لكاتب الدليل",
+    "summoner_icon": "أيقونة المستدعي"
+  }
 }

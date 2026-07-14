@@ -1,8 +1,20 @@
 {
-  "title": "<span class=\"destaque\">한 명</span>의 챔피언으로 배우기",
-  "step_1": "노력을 집중할 딱 <span class=\"destaque\">한 명</span>의 챔피언과 딱 <span class=\"destaque\">하나</span>의 라인만 찾아보세요",
-  "step_2": "이전 단계를 완료했다면, 선택한 캐릭터의 영상이나 스트리밍을 시청합니다",
-  "step_3": "스트리밍을 볼 때 시청 중인 플레이어가 주는 팁에 집중하세요",
-  "step_4": "스트리밍에서 배운 내용을 실제 게임에 적용해 보세요",
-  "btn_next": "다음 단계"
+  "btn_next": "다음 단계",
+  "footer": {
+    "share_telegram": "텔레그램에 사이트 공유하기",
+    "share_whatsapp": "왓츠앱에 사이트 공유하기",
+    "share_bluesky": "블루스카이에 사이트 공유하기",
+    "share_x": "X에 사이트 공유하기",
+    "share_facebook": "페이스북에 사이트 공유하기",
+    "share_reddit": "레딧에 사이트 공유하기"
+  },
+  "banner": {
+    "view_opgg": "OP.GG에서 제작자 전적 보기",
+    "play_crossword": "리그 오브 레전드 십자말풀이 게임하기",
+    "watch_videos": "인게임 분석 영상을 통해 천상계 유저의 플레이 스타일 확인하기"
+  },
+  "myaccount": {
+    "badge_current_elo": "가이드 제작자의 현재 티어 엠블럼",
+    "summoner_icon": "소환사 아이콘"
+  }
 }

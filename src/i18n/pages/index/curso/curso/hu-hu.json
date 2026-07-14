@@ -1,8 +1,20 @@
 {
-  "title": "Tanulás <span class=\"destaque\">EGYETLEN</span> Hőssel",
-  "step_1": "Keress csupán <span class=\"destaque\">EGY</span> hőst és csupán <span class=\"destaque\">EGY</span> ösvényt, amire összpontosítani fogod a számodra fontos erőfeszítéseket",
-  "step_2": "Az előző lépés után videókat és/vagy közvetítéseket fogsz nézni a kiválasztott karakterről",
-  "step_3": "A streameket nézve koncentrálj a tippekre, amiket az épp nézett játékos átad",
-  "step_4": "Próbáld meg alkalmazni a közvetítésekből tanultakat a saját játékaidban",
-  "btn_next": "KÖVETKEZŐ LÉPÉS"
+  "btn_next": "KÖVETKEZŐ LÉPÉS",
+  "footer": {
+    "share_telegram": "Weboldal megosztása Telegramon",
+    "share_whatsapp": "Weboldal megosztása WhatsAppon",
+    "share_bluesky": "Weboldal megosztása Blueskyn",
+    "share_x": "Weboldal megosztása X-en",
+    "share_facebook": "Weboldal megosztása Facebookon",
+    "share_reddit": "Weboldal megosztása Redditen"
+  },
+  "banner": {
+    "view_opgg": "Készítő profiljának megtekintése OP.GG-n",
+    "play_crossword": "League of Legends keresztrejtvény játék",
+    "watch_videos": "Nézz gyakorlati videókat és elemezd, hogyan játszik egy High ELO játékos"
+  },
+  "myaccount": {
+    "badge_current_elo": "Útmutató készítőjének jelenlegi ELO jelvénye",
+    "summoner_icon": "Idéző ikon"
+  }
 }

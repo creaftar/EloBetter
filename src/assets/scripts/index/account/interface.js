@@ -25,6 +25,10 @@ const t = container && container.dataset.translations
   ? JSON.parse(container.dataset.translations) 
   : {};
 
+const tc = container && container.dataset.translationscurso 
+  ? JSON.parse(container.dataset.translationscurso) 
+  : {};
+
 copiarBtn.addEventListener("click", CopiarNickname);
 atualizarBtn.addEventListener("click", async () => {
     await AtualizarPerfil();
@@ -90,7 +94,8 @@ function AtualizarRank(ranking){
 function GerarImg(){
     const imgDOM = document.createElement("img");
     imgDOM.id = "perfil-img";
-    imgDOM.alt = "Invoker Icon"; 
+    console.log(tc);
+    imgDOM.alt = tc;
     imgDOM.width = "120"; 
     imgDOM.height = "120"; 
     imgDOM.loading = "lazy";
