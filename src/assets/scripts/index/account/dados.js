@@ -1,9 +1,18 @@
 import { db } from "../../ferramentas/firebase";
 import { setDoc, doc, getDoc } from "firebase/firestore";
 
-const resVersion = await fetch("https://ddragon.leagueoflegends.com/api/versions.json");
-const versions = await resVersion.json();
-export const latestVersion = versions[0]; // pega a versão mais recente
+export let latestVersion = "16.13.1"; // Versão padrão inicial (fallback)
+
+async function carregarVersao() {
+    try {
+        const resVersion = await fetch("https://ddragon.leagueoflegends.com/api/versions.json");
+        const versions = await resVersion.json();
+        latestVersion = versions[0];
+    } catch (e) {
+        console.error("Erro ao obter versão do DDragon:", e);
+    }
+}
+carregarVersao();
 
 export let _lastUpdate;
 

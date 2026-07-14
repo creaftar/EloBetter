@@ -18,7 +18,7 @@ const winsEl = document.getElementById("tier-perfil-win");
 const lossesEl = document.getElementById("tier-perfil-losses");
 const winrateEl = document.getElementById("tier-perfil-winrate");
 
-let perfil = await BuscarPerfil();
+let perfil = null;
 
 const container = document.getElementById("myaccount");
 const t = container && container.dataset.translations 
@@ -39,9 +39,13 @@ atualizarBtn.addEventListener("click", async () => {
 
 async function AtualizarInterface(botaoChamando = false){
     if (!perfil || botaoChamando){
-        await AtualizarPerfil();
-        perfil = await BuscarPerfil();
+        if (botaoChamando)
+            await AtualizarPerfil();
+        else
+            perfil = await BuscarPerfil();
     }
+    
+    if (!perfil) return false;
 
     imgEl.innerHTML = "";
     imgEl.appendChild(GerarImg());

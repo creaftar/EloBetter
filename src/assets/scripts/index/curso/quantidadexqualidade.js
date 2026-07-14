@@ -1,20 +1,13 @@
-const containerPrincipal = document.getElementById('quantidadexqualidade');
-const boxDetalhe = document.getElementById('detalheElo');
-const todasAsLinhas = document.querySelectorAll('.wrapperGrafico path');
-const todosItensLegenda = document.querySelectorAll('.wrapperGrafico .item-legenda');
+function inicializarGrafico() {
+    const containerPrincipal = document.getElementById('quantidadexqualidade');
+    const boxDetalhe = document.getElementById('detalheElo');
+    const container = document.getElementById("traducao-grafico");
+    
+    if (!containerPrincipal || !boxDetalhe || !container) return;
 
-const container = document.getElementById("traducao-grafico");
-const t = container && container.dataset.translations 
-  ? JSON.parse(container.dataset.translations) 
-  : {};
+    const t = container.dataset.translations ? JSON.parse(container.dataset.translations) : {};
+    const t_padrao = container.dataset.translationspadrao ? JSON.parse(container.dataset.translationspadrao) : "";
 
-const t_padrao = container && container.dataset.translationspadrao 
-  ? JSON.parse(container.dataset.translationspadrao) 
-  : {};
-  
-if (containerPrincipal && boxDetalhe) {
-
-    // Dados de performance reais para os 6 elos (mapeados de 0 a 260 pixels de altura útil no SVG)
     const dadosReais = {
         mestre:     [100, 95, 55, 20, 5, 0, 0, 0],
         diamante:   [95, 90, 75, 45, 25, 10, 0, 0],
@@ -24,18 +17,17 @@ if (containerPrincipal && boxDetalhe) {
         ferro:      [55, 54, 53, 52, 51, 50, 48, 46]
     };
 
-    // Textos explicativos para o Box de Detalhes
     const descricoesElo = {...t};
 
-    // Função de conversão para as coordenadas do SVG (Largura útil: 500, Altura útil: 260)
+    // Otimização matemática simples (evita recriar escopos internos)
     const gerarCaminho = (valores) => {
         const largura = 500;
-        const alturaUtil = 260; // Deixa 30px de margem do topo do SVG
+        const alturaUtil = 260; 
         const topoMargem = 30;
+        const totalItens = valores.length - 1;
         
         return valores.map((valor, idx) => {
-            const x = (idx / (valores.length - 1)) * largura;
-            // Inverte o eixo Y e adiciona a margem do topo
+            const x = (idx / totalItens) * largura;
             const y = (alturaUtil - ((valor / 100) * alturaUtil)) + topoMargem;
             return `${idx === 0 ? 'M' : 'L'} ${x} ${y}`;
         }).join(' ');
@@ -44,55 +36,70 @@ if (containerPrincipal && boxDetalhe) {
     // Inicializa os desenhos das linhas
     Object.keys(dadosReais).forEach((elo) => {
         const path = document.getElementById(`linha${elo.charAt(0).toUpperCase() + elo.slice(1)}`);
-        if (path) {
-            path.setAttribute('d', gerarCaminho(dadosReais[elo]));
-        }
+        if (path) path.setAttribute('d', gerarCaminho(dadosReais[elo]));
     });
 
-    // Funções para ligar/desligar o destaque do elo
+    // Cacheamos as seleções para evitar querySelector repetidos no mousemove
+    const todasAsLinhas = containerPrincipal.querySelectorAll('.wrapperGrafico path');
+    const todosItensLegenda = containerPrincipal.querySelectorAll('.wrapperGrafico .item-legenda');
+
     const ativarFoco = (elo) => {
         containerPrincipal.classList.add('tem-foco');
         
-        // Ativa a linha correspondente
-        const linha = document.querySelector(`.wrapperGrafico path[data-elo="${elo}"]`);
-        if (linha) linha.classList.add('focado');
+        // Remove classes anteriores com laços eficientes
+        for (let i = 0; i < todasAsLinhas.length; i++) {
+            const linha = todasAsLinhas[i];
+            linha.classList.toggle('focado', linha.getAttribute('data-elo') === elo);
+        }
+        
+        for (let i = 0; i < todosItensLegenda.length; i++) {
+            const legenda = todosItensLegenda[i];
+            legenda.classList.toggle('focado', legenda.getAttribute('data-elo') === elo);
+        }
 
-        // Ativa o item da legenda
-        const legenda = document.querySelector(`.wrapperGrafico .item-legenda[data-elo="${elo}"]`);
-        if (legenda) legenda.classList.add('focado');
-
-        // Altera o texto explicativo
         boxDetalhe.innerHTML = descricoesElo[elo] || "";
     };
 
     const desativarFoco = () => {
         containerPrincipal.classList.remove('tem-foco');
-        todasAsLinhas.forEach(l => l.classList.remove('focado'));
-        todosItensLegenda.forEach(l => l.classList.remove('focado'));
+        for (let i = 0; i < todasAsLinhas.length; i++) todasAsLinhas[i].classList.remove('focado');
+        for (let i = 0; i < todosItensLegenda.length; i++) todosItensLegenda[i].classList.remove('focado');
         boxDetalhe.innerHTML = t_padrao;
     };
 
-    // Atribui os eventos de Mouse para Linhas e Legendas
-    [...todasAsLinhas, ...todosItensLegenda].forEach((elemento) => {
-        elemento.addEventListener('mouseenter', () => {
-            const elo = elemento.getAttribute('data-elo');
-            if (elo) ativarFoco(elo);
-        });
-
-        elemento.addEventListener('mouseleave', desativarFoco);
+    // DELEGAÇÃO DE EVENTOS: Apenas 2 listeners no container pai em vez de 24 listeners individuais!
+    containerPrincipal.addEventListener('mouseover', (e) => {
+        const alvo = e.target.closest('path, .item-legenda');
+        if (!alvo) return;
+        
+        const elo = alvo.getAttribute('data-elo');
+        if (elo) ativarFoco(elo);
     });
 
+    containerPrincipal.addEventListener('mouseout', (e) => {
+        const alvo = e.target.closest('path, .item-legenda');
+        if (alvo) desativarFoco();
+    });
+
+    // Animação com IntersectionObserver
     const observador = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                todasAsLinhas.forEach(linha => linha.classList.add('animar'));
-                observador.unobserve(containerPrincipal);
+        if (entries[0].isIntersecting) {
+            for (let i = 0; i < todasAsLinhas.length; i++) {
+                todasAsLinhas[i].classList.add('animar');
             }
-        });
+            observador.unobserve(containerPrincipal);
+        }
     }, { 
         rootMargin: "-20% 0px -20% 0px", 
         threshold: 0.5 
     });
 
     observador.observe(containerPrincipal);
+}
+
+// Inicialização segura
+if ('requestIdleCallback' in window) {
+    requestIdleCallback(inicializarGrafico);
+} else {
+    window.addEventListener('load', inicializarGrafico);
 }

@@ -80,7 +80,10 @@
   text-transform: uppercase;
   margin-top: 9px;
   text-align: center;
+  max-width: 100%;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .coluna:hover {
@@ -118,7 +121,8 @@
   }
   .grafico-colunas-container {
     border: none;
-    gap: 30px;
+    gap: 12px;
+    width: 100%;
   }
   
   .coluna-wrapper {
