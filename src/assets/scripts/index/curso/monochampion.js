@@ -1,21 +1,22 @@
-import { ProximaSecao } from "./curso";
-
 const lis = document.querySelectorAll(".li-monochampion");
 const nextBtn = document.getElementById("next-step-monochampion");
 const resetBtn = document.getElementById("reset-step-monochampion");
 
-let currentActiveIndex = parseInt(localStorage.getItem("monoIndex")) ?? -1;
+let currentActiveIndex;
 
 // Criamos o Observer apenas se não houver um índice ativo salvo
 let observer = null;
 
-if (currentActiveIndex >= 0) {
-    for (let i = 0; i <= currentActiveIndex; i++) {
-        if (lis[i]) lis[i].classList.add("active");
+window.addEventListener('load', () => {
+    currentActiveIndex = parseInt(localStorage.getItem("monoIndex")) ?? -1;
+    if (currentActiveIndex >= 0) {
+        for (let i = 0; i <= currentActiveIndex; i++) {
+            if (lis[i]) lis[i].classList.add("active");
+        }
+    } else {
+        AtivarObserver();
     }
-} else {
-    AtivarObserver();
-}
+}, { once: true });
 
 // Substitui a função VerificarScroll e o listener de scroll manual por uma API performática
 function AtivarObserver() {
@@ -47,7 +48,7 @@ function DesativarObserver() {
     }
 }
 
-nextBtn.addEventListener("click", () => {
+nextBtn.addEventListener("click", async () => {
     if (currentActiveIndex === -1) {
         currentActiveIndex = 0;
         lis[0].classList.add("active");
@@ -60,8 +61,10 @@ nextBtn.addEventListener("click", () => {
         lis[currentActiveIndex].classList.add("active");
         localStorage.setItem("monoIndex", currentActiveIndex);
     }
-    else
+    else{
+        const { ProximaSecao } = await import("./curso");
         ProximaSecao("trintaquarenta");
+    }
 });
 
 resetBtn.addEventListener("click", () => {

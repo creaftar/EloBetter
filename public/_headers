@@ -41,34 +41,3 @@
 # Cache de Assets do Astro
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable
-
-  # Sitemap XML
-/sitemap*.xml
-  Content-Type: application/xml
-
-# Headers de API (CORS)
-/api/*
-  Access-Control-Allow-Origin: *
-  Access-Control-Allow-Methods: GET,OPTIONS,PATCH,DELETE,POST,PUT
-  Access-Control-Allow-Headers: X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version
-
-# 1. TODOS OS ASSETS DO ASTRO (JS, CSS, Fontes, Imagens de Build)
-# Como o Astro gera hashes únicos no nome de absolutamente tudo dentro desta pasta,
-# podemos aplicar cache de 1 ano com segurança total! Isso limpa os avisos das fontes do Lighthouse.
-/_astro/*
-  Cache-Control: public, max-age=31536000, immutable
-
-# 2. SCRIPT DO CLARITY (Se estiver na raiz /clarity.js)
-/clarity.js
-  Cache-Control: public, max-age=31536000, immutable
-
-# 3. IMAGENS E MÍDIAS DA PASTA PUBLIC (Fora do build do Astro)
-# Se você tiver uma pasta "public/assets/", essa regra garante o cache delas em qualquer nível de subpasta.
-/assets/*
-  Cache-Control: public, max-age=604800, immutable
-
-# 4. PÁGINAS HTML (HTML na raiz e em subpastas)
-# No Cloudflare Pages, para aplicar regras a rotas de página, usamos apenas asterisco simples.
-# Isso garante que as páginas HTML atualizem rápido sem agarrar cache velho no navegador do usuário.
-/*
-  Cache-Control: public, max-age=180, must-revalidate
