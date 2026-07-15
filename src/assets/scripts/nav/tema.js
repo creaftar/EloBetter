@@ -1,7 +1,3 @@
-let toggeThemeEl = document.getElementById("container-lampada");
-
-toggeThemeEl.addEventListener("click", SetaTema);
-
 function SetaTema() {
     var tema = localStorage.getItem('tema');
     const htmlEl = document.documentElement;
@@ -40,4 +36,10 @@ function UpdateThemeUI() {
     toggeThemeEl.innerHTML = icons[currentTheme];
 }
 
-UpdateThemeUI();
+
+window.addEventListener('DOMContentLoaded', () => {
+    let toggeThemeEl = document.getElementById("container-lampada");
+
+    toggeThemeEl.addEventListener("click", SetaTema);
+    UpdateThemeUI();
+});
