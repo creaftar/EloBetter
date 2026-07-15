@@ -95,6 +95,10 @@ const estiloCritico = fs.readFileSync(estiloPath, 'utf-8');
         <style is:inline set:html={estiloCritico} />
         <script is:inline set:html={scriptCritico} />
 
+        <link rel="preconnect" href="https://ddragon.leagueoflegends.com">
+        <link rel="preconnect" href="https://firestore.googleapis.com">
+        <link rel="preconnect" href="https://wsrv.nl">
+
         <script type="text/javascript">
             (function(c,l,a,r,i,t,y){
                 c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};

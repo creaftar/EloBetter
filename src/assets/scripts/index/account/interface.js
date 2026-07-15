@@ -109,7 +109,7 @@ function GerarImg(){
     const urlOriginal = `https://ddragon.leagueoflegends.com/cdn/${latestVersion}/img/profileicon/${perfil.iconeId}.png`;
     
     // Otimização máxima: Redimensiona para 120x120, converte para webp e qualidade 75
-    const urlOtimizada = `https://wsrv.nl/?url=${encodeURIComponent(urlOriginal)}&w=120&h=120&output=webp&q=75`;
+    const urlOtimizada = `https://wsrv.nl/?url=${encodeURIComponent(urlOriginal)}&w=120&h=120&output=webp&q=90`;
     
     imgDOM.src = urlOtimizada;
     
@@ -208,10 +208,11 @@ function VerificarEstadoBotao(){
 function GerarImgElo(ranking) {
     const imgDOM = document.createElement("img");
     imgDOM.id = "elo-perfil-img";
-    imgDOM.width = 80;
-    imgDOM.height = 80;
+    
+    // 1. Ajuste os atributos nativos de renderização para 64px (o tamanho real de exibição)
+    imgDOM.width = 64;  
+    imgDOM.height = 64; 
     imgDOM.loading = "eager";
-    imgDOM.alt= tc.badge_current_elo;
 
     let urlOriginal = "";
     if (!ranking || ranking === "unranked") {
@@ -220,11 +221,12 @@ function GerarImgElo(ranking) {
         urlOriginal = `https://raw.communitydragon.org/latest/plugins/rcp-fe-lol-shared-components/global/default/${ranking}.png`;
     }
 
-    const urlOtimizada = `https://wsrv.nl/?url=${encodeURIComponent(urlOriginal)}&w=80&h=80&output=webp&q=75`;
+    // 2. Peça ao wsrv.nl para gerar a imagem exatamente com o tamanho esperado de 96px (64px * 1.5)
+    // Isso garante nitidez perfeita para telas de alta densidade sem pesar nada
+    const urlOtimizada = `https://wsrv.nl/?url=${encodeURIComponent(urlOriginal)}&w=96&h=96&output=webp&q=80`;
 
     imgDOM.src = urlOtimizada;
 
-    // GARANTIA ABSOLUTA: Se o wsrv.nl falhar, carrega a imagem do Community Dragon
     imgDOM.onerror = () => {
         imgDOM.onerror = null;
         imgDOM.src = urlOriginal;
@@ -234,4 +236,6 @@ function GerarImgElo(ranking) {
     return imgDOM;
 }
 
-AtualizarInterface();
+window.addEventListener('load', () => {
+    AtualizarInterface();
+}, { once: true });
