@@ -41,8 +41,7 @@ async function AtualizarInterface(botaoChamando = false){
     if (!perfil || botaoChamando){
         if (botaoChamando)
             await AtualizarPerfil();
-        else
-            perfil = await BuscarPerfil();
+        perfil = await BuscarPerfil();
     }
     
     if (!perfil) return false;
@@ -109,7 +108,7 @@ function GerarImg(){
     const urlOriginal = `https://ddragon.leagueoflegends.com/cdn/${latestVersion}/img/profileicon/${perfil.iconeId}.png`;
     
     // Otimização máxima: Redimensiona para 120x120, converte para webp e qualidade 75
-    const urlOtimizada = `https://wsrv.nl/?url=${encodeURIComponent(urlOriginal)}&w=120&h=120&output=webp&q=90`;
+    const urlOtimizada = `https://wsrv.nl/?url=${encodeURIComponent(urlOriginal)}&w=120&h=120&output=webp&q=100`;
     
     imgDOM.src = urlOtimizada;
     
