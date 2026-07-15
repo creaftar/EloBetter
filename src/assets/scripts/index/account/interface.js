@@ -108,7 +108,7 @@ function GerarImg(){
     const urlOriginal = `https://ddragon.leagueoflegends.com/cdn/${latestVersion}/img/profileicon/${perfil.iconeId}.png`;
     
     // Otimização máxima: Redimensiona para 120x120, converte para webp e qualidade 75
-    const urlOtimizada = `https://wsrv.nl/?url=${encodeURIComponent(urlOriginal)}&w=120&h=120&output=webp&q=100`;
+    const urlOtimizada = `https://wsrv.nl/?url=${encodeURIComponent(urlOriginal)}&w=120&h=120&output=webp&q=80`;
     
     imgDOM.src = urlOtimizada;
     
