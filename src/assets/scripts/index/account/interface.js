@@ -213,6 +213,7 @@ function GerarImgElo(ranking) {
     imgDOM.width = 64;  
     imgDOM.height = 64; 
     imgDOM.loading = "eager";
+    imgDOM.alt= tc.badge_current_elo;
 
     let urlOriginal = "";
     if (!ranking || ranking === "unranked") {
