@@ -1,3 +1,5 @@
+import { ProximaSecao } from "./curso";
+
 const lis = document.querySelectorAll(".li-monochampion");
 const nextBtn = document.getElementById("next-step-monochampion");
 const resetBtn = document.getElementById("reset-step-monochampion");
@@ -62,7 +64,6 @@ nextBtn.addEventListener("click", async () => {
         localStorage.setItem("monoIndex", currentActiveIndex);
     }
     else{
-        const { ProximaSecao } = await import("./curso");
         ProximaSecao("trintaquarenta");
     }
 });

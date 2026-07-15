@@ -1,3 +1,5 @@
+import { ProximaSecao } from "./curso";
+
 const container = document.getElementById("traducao-mentalidade");
 const t = container && container.dataset.translations 
   ? JSON.parse(container.dataset.translations) 
@@ -21,7 +23,6 @@ quadrados.forEach((quadrado, i) => {
         if (quadrado.classList.contains("mentalidade-ativa") && i !== quadrados.length - 1)
             ProximoQuadrado(i, quadrado);
         else if (quadrado.classList.contains("mentalidade-ativa") && i == quadrados.length - 1) {
-            const { ProximaSecao } = await import("./curso");
             ProximaSecao("aviso-mentalidade");
             quadrado.classList.remove("mentalidade-ativa");
             
@@ -120,6 +121,5 @@ function CarregarProgressoSalvo() {
 }
 
 nextBtn.addEventListener("click", async ()=>{
-    const { ProximaSecao } = await import("./curso");
     ProximaSecao("quantidadexqualidade");
 });
