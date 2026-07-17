@@ -19,6 +19,10 @@
     width: 100%;
     background-color: rgba(var(--fundo), 1);
 }
+#logo-desenho{
+    width: 42px;
+    height: 32px;
+}
 #logo{
     margin: 0 24px;
     cursor: pointer;
@@ -38,6 +42,10 @@
 @media screen and (max-width: 500px){
     #logo{
         margin: 0 9px;
+    }
+    #logo-desenho{
+        width: 32px;
+        height: 32px;
     }
 }
 
