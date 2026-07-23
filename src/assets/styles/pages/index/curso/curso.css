@@ -11,6 +11,9 @@
     margin-top: 12px;
     cursor: pointer;
     box-shadow: 0 0 20px 3px rgba(var(--fumaca), 0.1);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .reset-step{
     color: rgba(var(--padrao), 1);
@@ -45,6 +48,9 @@
     margin-top: 12px;
     cursor: pointer;
     box-shadow: 0 0 20px 3px rgba(var(--fumaca), 0.1);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .ns-alternativo:not(.disabled):hover{
