@@ -11,7 +11,8 @@
   "banner": {
     "view_opgg": "Voir le profil du créateur sur OP.GG",
     "play_crossword": "Jouer aux mots croisés League of Legends",
-    "watch_videos": "Regarder des vidéos de gameplay et analyser comment joue un joueur High ELO"
+    "watch_videos": "Regarder des vidéos de gameplay et analyser comment joue un joueur High ELO",
+    "more_tools": "Découvrez plus d'outils en ligne pour automatiser votre flux de travail quotidien"
   },
   "myaccount": {
     "badge_current_elo": "Blason de l'ELO actuel de l'auteur du guide",

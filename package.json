@@ -1,6 +1,7 @@
 {
   "name": "EloBetter",
   "version": "1.0.0",
+  "author": "jiyuu wo",
   "scripts": {
     "dev": "astro dev --host",
     "start": "npm run update && astro dev --host",

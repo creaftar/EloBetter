@@ -11,7 +11,8 @@
   "banner": {
     "view_opgg": "在 OP.GG 上查看創作者的個人檔案",
     "play_crossword": "玩《英雄聯盟》填字遊戲",
-    "watch_videos": "觀看實戰影片並分析 High ELO 玩家的打法"
+    "watch_videos": "觀看實戰影片並分析 High ELO 玩家的打法",
+    "more_tools": "探索更多線上工具以自動化您的日常工作流程"
   },
   "myaccount": {
     "badge_current_elo": "攻略作者當前 ELO 的徽章",

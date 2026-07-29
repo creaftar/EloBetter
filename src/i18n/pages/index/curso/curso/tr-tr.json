@@ -11,7 +11,8 @@
   "banner": {
     "view_opgg": "OP.GG'de üreticinin profilini görüntüle",
     "play_crossword": "League of Legends kare bulmacasını oyna",
-    "watch_videos": "Pratik videoları izle ve bir yüksek ELO oyuncusunun nasıl oynadığını analiz et"
+    "watch_videos": "Pratik videoları izle ve bir yüksek ELO oyuncusunun nasıl oynadığını analiz et",
+    "more_tools": "Günlük iş akışınızı otomatikleştirmek için daha fazla çevrimiçi aracı keşfedin"
   },
   "myaccount": {
     "badge_current_elo": "Rehber yazarının mevcut ELO amblemi",

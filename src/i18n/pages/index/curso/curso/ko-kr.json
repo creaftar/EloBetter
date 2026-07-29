@@ -11,7 +11,8 @@
   "banner": {
     "view_opgg": "OP.GG에서 제작자 전적 보기",
     "play_crossword": "리그 오브 레전드 십자말풀이 게임하기",
-    "watch_videos": "인게임 분석 영상을 통해 천상계 유저의 플레이 스타일 확인하기"
+    "watch_videos": "인게임 분석 영상을 통해 천상계 유저의 플레이 스타일 확인하기",
+    "more_tools": "일상적인 워크플로를 자동화하기 위한 더 많은 온라인 도구를 찾아보세요"
   },
   "myaccount": {
     "badge_current_elo": "가이드 제작자의 현재 티어 엠블럼",

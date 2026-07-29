@@ -11,7 +11,8 @@
   "banner": {
     "view_opgg": "عرض ملف المنشئ الشخصي على OP.GG",
     "play_crossword": "لعب الكلمات المتقاطعة الخاصة بـ League of Legends",
-    "watch_videos": "شاهد فيديوهات عملية وحلل طريقة لعب لاعب High ELO"
+    "watch_videos": "شاهد فيديوهات عملية وحلل طريقة لعب لاعب High ELO",
+    "more_tools": "استكشف المزيد من الأدوات عبر الإنترنت لأتمتة تدفق عملك اليومي"
   },
   "myaccount": {
     "badge_current_elo": "شعار الـ ELO الحالي لكاتب الدليل",

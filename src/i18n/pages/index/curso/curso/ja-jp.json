@@ -11,7 +11,8 @@
   "banner": {
     "view_opgg": "OP.GGで作成者のプロフィールを表示する",
     "play_crossword": "League of Legendsのクロスワードパズルで遊ぶ",
-    "watch_videos": "実戦動画を見てハイレート帯のプレイを分析する"
+    "watch_videos": "実戦動画を見てハイレート帯のプレイを分析する",
+    "more_tools": "毎日のワークフローを自動化するその他のオンラインツールを見る"
   },
   "myaccount": {
     "badge_current_elo": "ガイド作成者の現在のレートエンブレム",
