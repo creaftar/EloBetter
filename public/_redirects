@@ -1,1 +1,4 @@
 https://elobetter.pages.dev/* https://elobetter.com/:splat 301!
+/:lang/guide/elobetter /:lang/guide/elobetter 301
+/:lang/* https://taptotool.com/:lang/guide/elobetter/:splat 301
+/ https://taptotool.com/guide/elobetter/ 301
